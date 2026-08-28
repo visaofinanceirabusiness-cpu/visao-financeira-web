@@ -1,0 +1,64 @@
+================================================
+  VISAO FINANCEIRA - SITIO WEB
+================================================
+
+  index.html            <- la pagina (espanol + portugues)
+  assets/LOGO.jpeg      <- OK
+  assets/SABIO.png      <- OK
+
+--------------------------------------------------
+YA ESTA CONFIGURADO
+--------------------------------------------------
+  WhatsApp : +55 48 99609 4127
+  Correo   : visaofinanceirabusiness@gmail.com
+  App      : https://vision-finaciera.vercel.app
+  Planes   : R$ 60 / R$ 100 / R$ 120 por mes
+
+--------------------------------------------------
+IDIOMAS
+--------------------------------------------------
+Arriba a la derecha hay un boton ES | PT.
+- Si el visitante entra desde Brasil (navegador en portugues),
+  la pagina se abre sola en PORTUGUES.
+- Si no, se abre en ESPANOL.
+- Si el visitante cambia el idioma, el navegador lo recuerda.
+- El mensaje que se escribe solo en WhatsApp tambien cambia de idioma.
+
+COMO EDITAR UN TEXTO
+Cada texto traducible se ve asi dentro del index.html:
+
+   <h3 data-pt="Contabilidade organizada">Contabilidad organizada</h3>
+        ^^^^ portugues                     ^^^^ espanol
+
+Cambias uno, el otro, o los dos. Nada mas.
+
+--------------------------------------------------
+VER LA PAGINA
+--------------------------------------------------
+Doble clic en index.html.
+
+--------------------------------------------------
+PUBLICAR EN VERCEL (gratis)
+--------------------------------------------------
+1. Entra a vercel.com/new
+2. Arrastra la carpeta "web-site" completa.
+3. Vercel te da una direccion tipo
+   https://visao-financeira.vercel.app
+
+IMPORTANTE: crea un PROYECTO NUEVO.
+NO lo subas encima del proyecto "vision-financiera",
+porque ese es la aplicacion que ya usan tus clientes.
+
+--------------------------------------------------
+DETALLE DE LAS IMAGENES
+--------------------------------------------------
+Las dos imagenes tienen fondo blanco/gris solido (no transparente).
+La pagina lo disimula por CSS:
+ - El logo se aclara para que el fondo se funda con el blanco.
+ - Sabio usa "multiply" para que su fondo blanco desaparezca
+   sobre las secciones claras.
+ - En la seccion azul oscura, Sabio va dentro de un circulo blanco.
+
+Si algun dia quieres que quede perfecto, pasa las dos imagenes por
+https://www.remove.bg (gratis), guardalas como PNG transparente
+con los mismos nombres, y se vera aun mejor sin tocar el codigo.

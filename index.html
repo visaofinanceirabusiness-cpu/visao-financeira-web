@@ -219,6 +219,29 @@ section{padding:88px 0}
 .step h3{font-size:18px;margin-bottom:9px}
 .step p{font-size:15px}
 
+/* ---------- PROMO DE LANZAMIENTO ---------- */
+.promo{
+  background:linear-gradient(120deg,var(--navy) 0%,var(--navy-soft) 100%);
+  border-radius:var(--radius);padding:26px 34px;margin-bottom:40px;color:#fff;
+  display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap;
+  text-align:center;box-shadow:var(--shadow-lg);position:relative;overflow:hidden;
+}
+.promo::after{
+  content:'';position:absolute;right:-90px;top:-110px;width:280px;height:280px;
+  background:var(--green);opacity:.22;border-radius:50%;
+}
+.promo-badge{
+  position:relative;z-index:2;background:var(--green);color:#fff;
+  font-family:'Montserrat',sans-serif;font-weight:800;font-size:12px;letter-spacing:.14em;
+  text-transform:uppercase;padding:9px 18px;border-radius:999px;white-space:nowrap;
+}
+.promo-text{position:relative;z-index:2}
+.promo-text strong{
+  display:block;font-family:'Montserrat',sans-serif;font-weight:800;
+  font-size:clamp(18px,2.2vw,25px);color:#fff;line-height:1.25;
+}
+.promo-text span{display:block;font-size:15.5px;color:#7BE39B;font-weight:600;margin-top:7px}
+
 /* ---------- PLANES ---------- */
 .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;align-items:start}
 .plan{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:34px 28px;
@@ -347,7 +370,7 @@ footer ul a:hover{color:#7BE39B}
 <header>
   <div class="wrap nav">
     <a href="#inicio" class="brand">
-      <img class="logo-mark" src="assets/LOGO.png" alt="Visão Financeira">
+      <img class="logo-mark" src="assets/LOGO.png?v=2" alt="Visão Financeira">
       <span class="brand-text">VISÃO FINANCEIRA<small>BUSINESS</small></span>
     </a>
 
@@ -400,7 +423,7 @@ footer ul a:hover{color:#7BE39B}
       </div>
 
       <div class="hero-visual">
-        <img class="sabio-cut" src="assets/SABIO.png" alt="Sabio, el guardián de tu negocio">
+        <img class="sabio-cut" src="assets/SABIO.png?v=2" alt="Sabio, el guardián de tu negocio">
         <div class="hero-badge" data-pt="Olá, eu sou o Sabio — o guardião do seu negócio">Hola, soy Sabio — el guardián de tu negocio</div>
       </div>
     </div>
@@ -528,7 +551,7 @@ footer ul a:hover{color:#7BE39B}
 
       <div class="sabio-img reveal">
         <div class="ring"></div>
-        <img class="sabio-cut" src="assets/SABIO.png" alt="Sabio, la mascota de Visão Financeira">
+        <img class="sabio-cut" src="assets/SABIO.png?v=2" alt="Sabio, la mascota de Visão Financeira">
       </div>
 
       <div class="reveal">
@@ -673,6 +696,14 @@ footer ul a:hover{color:#7BE39B}
       <p data-pt="Todos incluem acesso à plataforma e acompanhamento humano. Sem fidelidade obrigatória.">Todos incluyen acceso a la plataforma y acompañamiento humano. Sin permanencia obligatoria.</p>
     </div>
 
+    <div class="promo reveal">
+      <span class="promo-badge" data-pt="Oferta de lançamento">Oferta de lanzamiento</span>
+      <div class="promo-text">
+        <strong data-pt="As 10 primeiras assinaturas ganham 3 meses grátis">Las primeras 10 suscripciones se llevan 3 meses gratis</strong>
+        <span data-pt="Não perca! Ainda há vagas.">¡No te lo pierdas! Todavía hay vacantes.</span>
+      </div>
+    </div>
+
     <div class="plans">
 
       <div class="plan reveal">
@@ -774,7 +805,7 @@ footer ul a:hover{color:#7BE39B}
 <!-- ===================== CTA FINAL ===================== -->
 <section class="cta-final">
   <div class="wrap">
-    <div class="sabio-medal"><img src="assets/SABIO.png" alt="Sabio"></div>
+    <div class="sabio-medal"><img src="assets/SABIO.png?v=2" alt="Sabio"></div>
     <h2 data-pt="Seu negócio, em boas mãos">Tu negocio, en buenas manos</h2>
     <p data-pt="Dê o primeiro passo hoje. Uma conversa sem custo pode mudar completamente a forma como você vê e conduz seu negócio.">Da el primer paso hoy. Una conversación sin costo puede cambiar por completo
        la forma en que ves y manejas tu negocio.</p>
@@ -834,7 +865,7 @@ footer ul a:hover{color:#7BE39B}
 
       <div>
         <div class="brand">
-          <img class="logo-mark" src="assets/LOGO.png" alt="Visão Financeira">
+          <img class="logo-mark" src="assets/LOGO.png?v=2" alt="Visão Financeira">
           <span class="brand-text">VISÃO FINANCEIRA<small>BUSINESS</small></span>
         </div>
         <p class="foot-about" data-pt="Somos seu aliado estratégico na gestão financeira, para que seu negócio cresça mais, melhor e com visão.">

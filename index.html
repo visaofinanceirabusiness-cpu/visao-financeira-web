@@ -219,12 +219,23 @@ section{padding:88px 0}
 .step h3{font-size:18px;margin-bottom:9px}
 .step p{font-size:15px}
 
+/* ---------- BARRA DE PROMO (arriba de todo) ---------- */
+.promo-bar{
+  background:var(--green);color:#fff;text-align:center;padding:10px 16px;
+  font-family:'Montserrat',sans-serif;font-weight:700;font-size:13.5px;
+  letter-spacing:.01em;display:block;text-decoration:none;
+}
+.promo-bar:hover{background:var(--green-bright)}
+.promo-bar strong{font-weight:800}
+.promo-bar .emoji{margin-right:6px}
+
 /* ---------- PROMO DE LANZAMIENTO ---------- */
 .promo{
   background:linear-gradient(120deg,var(--navy) 0%,var(--navy-soft) 100%);
-  border-radius:var(--radius);padding:26px 34px;margin-bottom:40px;color:#fff;
+  border-radius:var(--radius);padding:30px 34px;margin-bottom:40px;color:#fff;
   display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap;
   text-align:center;box-shadow:var(--shadow-lg);position:relative;overflow:hidden;
+  border:2px solid var(--green);
 }
 .promo::after{
   content:'';position:absolute;right:-90px;top:-110px;width:280px;height:280px;
@@ -234,11 +245,17 @@ section{padding:88px 0}
   position:relative;z-index:2;background:var(--green);color:#fff;
   font-family:'Montserrat',sans-serif;font-weight:800;font-size:12px;letter-spacing:.14em;
   text-transform:uppercase;padding:9px 18px;border-radius:999px;white-space:nowrap;
+  animation:promoPulse 1.8s ease-in-out infinite;
 }
+@keyframes promoPulse{
+  0%,100%{box-shadow:0 0 0 0 rgba(30,140,60,.55)}
+  50%{box-shadow:0 0 0 10px rgba(30,140,60,0)}
+}
+@media (prefers-reduced-motion:reduce){.promo-badge{animation:none}}
 .promo-text{position:relative;z-index:2}
 .promo-text strong{
   display:block;font-family:'Montserrat',sans-serif;font-weight:800;
-  font-size:clamp(18px,2.2vw,25px);color:#fff;line-height:1.25;
+  font-size:clamp(20px,2.6vw,29px);color:#fff;line-height:1.25;
 }
 .promo-text span{display:block;font-size:15.5px;color:#7BE39B;font-weight:600;margin-top:7px}
 
@@ -374,6 +391,11 @@ footer ul a:hover{color:#7BE39B}
 </style>
 </head>
 <body>
+
+<!-- ===================== BARRA DE PROMO ===================== -->
+<a href="#planes" class="promo-bar" data-pt="<span class='emoji'>🎉</span>Oferta de lançamento: <strong>as 10 primeiras assinaturas ganham o primeiro mês grátis</strong>">
+  <span class="emoji">🎉</span>Oferta de lanzamiento: <strong>las primeras 10 suscripciones se llevan el primer mes gratis</strong>
+</a>
 
 <!-- ===================== HEADER ===================== -->
 <header>
@@ -706,9 +728,9 @@ footer ul a:hover{color:#7BE39B}
     </div>
 
     <div class="promo reveal">
-      <span class="promo-badge" data-pt="Oferta de lançamento">Oferta de lanzamiento</span>
+      <span class="promo-badge" data-pt="🎉 Oferta de lançamento">🎉 Oferta de lanzamiento</span>
       <div class="promo-text">
-        <strong data-pt="As 10 primeiras assinaturas ganham 3 meses grátis">Las primeras 10 suscripciones se llevan 3 meses gratis</strong>
+        <strong data-pt="As 10 primeiras assinaturas ganham o primeiro mês grátis">Las primeras 10 suscripciones se llevan el primer mes gratis</strong>
         <span data-pt="Não perca! Ainda há vagas.">¡No te lo pierdas! Todavía hay vacantes.</span>
       </div>
     </div>

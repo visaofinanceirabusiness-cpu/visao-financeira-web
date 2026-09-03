@@ -194,6 +194,13 @@ section{padding:88px 0}
 .app-feats{display:grid;gap:14px;margin-bottom:32px}
 .app-feats div{display:flex;gap:12px;align-items:flex-start;color:#fff;font-size:15.5px;font-weight:500}
 .app-feats svg{flex-shrink:0;width:20px;height:20px;margin-top:3px}
+.app-video{border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.16);box-shadow:0 22px 54px rgba(0,0,0,.38);background:#000}
+.app-video iframe{width:100%;aspect-ratio:16/9;display:block;border:none}
+.app-shots{margin-top:64px}
+.app-shots-head{text-align:center;max-width:640px;margin:0 auto 30px}
+.app-shots-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.app-shot{border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.16);box-shadow:0 14px 34px rgba(0,0,0,.3);background:rgba(255,255,255,.04)}
+.app-shot img{width:100%;display:block}
 .app-mock{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);border-radius:20px;padding:22px}
 .app-mock .bar{display:flex;gap:6px;margin-bottom:18px}
 .app-mock .bar i{width:11px;height:11px;border-radius:50%;background:rgba(255,255,255,.28);display:block}
@@ -399,7 +406,7 @@ footer ul a:hover{color:#7BE39B}
   .hero-grid,.sabio-grid,.app-grid{grid-template-columns:1fr;gap:44px}
   .hero-visual{order:-1}
   .sabio-img img{max-width:260px}
-  .cards,.plans,.steps,.contact-grid{grid-template-columns:1fr}
+  .cards,.plans,.steps,.contact-grid,.app-shots-grid{grid-template-columns:1fr}
   .pillars-grid{grid-template-columns:repeat(2,1fr);gap:26px}
   .pillar{border-right:none}
   .foot-grid{grid-template-columns:1fr 1fr;gap:32px}
@@ -702,25 +709,24 @@ footer ul a:hover{color:#7BE39B}
         </div>
       </div>
 
-      <div class="app-mock reveal">
-        <div class="bar"><i></i><i></i><i></i></div>
-        <div class="mock-row">
-          <div class="mock-stat"><span data-pt="Receitas">Ingresos</span><b class="up">+18%</b></div>
-          <div class="mock-stat"><span data-pt="Despesas">Gastos</span><b>-6%</b></div>
-          <div class="mock-stat"><span data-pt="Resultado">Resultado</span><b class="up" data-pt="Positivo">Positivo</b></div>
-        </div>
-        <div class="mock-chart">
-          <i style="height:42%"></i><i style="height:58%"></i><i style="height:38%"></i>
-          <i style="height:72%"></i><i style="height:55%"></i><i style="height:88%"></i>
-          <i style="height:66%"></i><i style="height:100%"></i>
-        </div>
-        <div class="mock-row" style="margin-top:14px;margin-bottom:0">
-          <div class="mock-stat" style="grid-column:span 3">
-            <span data-pt="Fluxo de caixa projetado">Flujo de caja proyectado</span><b class="up" data-pt="Saudável">Saludable</b>
-          </div>
-        </div>
+      <div class="app-video reveal">
+        <iframe src="https://www.youtube.com/embed/hiWNn7lq9dg" title="Visão Financeira — demo del sistema" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
       </div>
 
+    </div>
+
+    <!-- ============ CAPTURAS DEL SISTEMA EN VIVO ============ -->
+    <div class="app-shots reveal">
+      <div class="app-shots-head">
+        <span class="sec-tag" data-pt="Direto do sistema">Directo del sistema</span>
+        <h2 class="sec-title" style="font-size:clamp(22px,2.6vw,30px)" data-pt="Assim é, em tempo real">Así se ve, en tiempo real</h2>
+      </div>
+
+      <div class="app-shots-grid">
+        <div class="app-shot"><img src="assets/captura-1.png" alt="Balanço Patrimonial en Visão Financeira"></div>
+        <div class="app-shot"><img src="assets/captura-2.png" alt="Gráficos de ventas y evolución de lucro"></div>
+        <div class="app-shot"><img src="assets/captura-3.png" alt="Panel de Control de una empresa"></div>
+      </div>
     </div>
   </div>
 </section>

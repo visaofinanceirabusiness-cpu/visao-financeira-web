@@ -331,10 +331,6 @@ section{padding:88px 0}
   position:relative;z-index:2;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);
   border-radius:20px;padding:30px 26px;text-align:center;backdrop-filter:blur(6px);
 }
-.familia-counter{
-  font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(36px,4.2vw,48px);
-  color:#fff;line-height:1;margin-bottom:8px;font-variant-numeric:tabular-nums;
-}
 .familia-counter-label{font-size:13.5px;color:#7BE39B;font-weight:700;letter-spacing:.02em;margin-bottom:22px}
 .familia-card .btn{width:100%;justify-content:center}
 @media(max-width:980px){.familia{padding:40px 26px}.familia-grid{grid-template-columns:1fr}}
@@ -589,8 +585,7 @@ footer ul a:hover{color:#7BE39B}
         </div>
 
         <div class="familia-card">
-          <div class="familia-counter" id="familiaCounter">0</div>
-          <div class="familia-counter-label" data-pt="famílias já usando o Visão Família">familias ya usando Visão Familia</div>
+          <div class="familia-counter-label" style="font-size:16px;color:#fff;font-weight:700;margin-bottom:18px;line-height:1.4" data-pt="Sem cartão de crédito. Sem letras miúdas.">Sin tarjeta de crédito. Sin letra chica.</div>
           <a href="https://vision-finaciera.vercel.app/crear-cuenta" target="_blank" rel="noopener" class="btn btn-primary" data-pt="Quero começar grátis →">Quiero empezar gratis →</a>
         </div>
       </div>
@@ -931,8 +926,11 @@ footer ul a:hover{color:#7BE39B}
       </details>
       <details class="reveal">
         <summary data-pt="Minha informação está segura?">¿Mi información está segura?</summary>
-        <p data-pt="Sim. Cada empresa tem seu espaço separado dentro da plataforma, com acesso restrito apenas às pessoas que você autorizar. A informação é sua e você pode exportá-la quando quiser.">Sí. Cada empresa tiene su espacio separado dentro de la plataforma, con acceso restringido
-           únicamente a las personas que tú autorices. La información es tuya y puedes exportarla cuando quieras.</p>
+        <p data-pt="Sim. Cada empresa tem seu espaço separado dentro da plataforma: seus dados não se misturam com os de outra empresa. Hoje, dentro da sua empresa, todas as pessoas que você convidar têm o mesmo nível de acesso à informação — ainda não existem níveis diferentes de permissão. A informação é sua: você pode pedir uma cópia dela ou a eliminação da sua conta a qualquer momento, escrevendo para nós.">Sí. Cada empresa tiene su espacio separado dentro de la plataforma: tus datos no se mezclan con
+           los de otra empresa. Hoy, dentro de tu empresa, todas las personas que invites tienen el mismo
+           nivel de acceso a la información — todavía no existen niveles distintos de permiso. La información
+           es tuya: podés pedirnos una copia de ella o la eliminación de tu cuenta en cualquier momento,
+           escribiéndonos.</p>
       </details>
       <details class="reveal">
         <summary data-pt="Preciso instalar algo para usar a plataforma?">¿Necesito instalar algo para usar la plataforma?</summary>
@@ -1143,47 +1141,6 @@ var io = new IntersectionObserver(function(entries){
 }, { threshold:.12, rootMargin:'0px 0px -40px 0px' });
 document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
 
-/* ---------- CONTADOR "FAMILIAS USANDO VISÃO FAMÍLIA" ----------
-   Ilustrativo, no es una lectura en vivo de la base de datos: crece
-   sola con el paso de los días (fecha de lanzamiento + un ritmo fijo
-   por día) para transmitir tracción sin depender de un backend. */
-(function(){
-  var counterEl = document.getElementById('familiaCounter');
-  if(!counterEl) return;
-
-  function calcularObjetivo(){
-    var lanzamiento = new Date('2026-08-01T00:00:00Z').getTime();
-    var dias = Math.max(0, Math.floor((Date.now() - lanzamiento) / 86400000));
-    var base = 180;
-    var seed = Math.floor(Date.now() / 86400000);
-    var variacion = Math.abs(Math.sin(seed) * 10000) % 6;
-    return Math.round(base + dias * 5.4 + variacion);
-  }
-
-  function animarConteo(objetivo){
-    var inicio = 0;
-    var duracion = 1400;
-    var t0 = performance.now();
-
-    function paso(ahora){
-      var progreso = Math.min(1, (ahora - t0) / duracion);
-      var facilitado = 1 - Math.pow(1 - progreso, 3);
-      counterEl.textContent = Math.round(inicio + (objetivo - inicio) * facilitado).toLocaleString('es-AR');
-      if(progreso < 1) requestAnimationFrame(paso);
-    }
-    requestAnimationFrame(paso);
-  }
-
-  var ioFamilia = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if(e.isIntersecting){
-        animarConteo(calcularObjetivo());
-        ioFamilia.unobserve(e.target);
-      }
-    });
-  }, { threshold:.4 });
-  ioFamilia.observe(counterEl);
-})();
 </script>
 
 <!-- Vercel Web Analytics (sitio estático, sin build — script directo) -->

@@ -38,7 +38,7 @@ VER LA PAGINA
 Doble clic en index.html.
 
 --------------------------------------------------
-PUBLICAR EN VERCEL (gratis)
+PUBLICAR EN VERCEL
 --------------------------------------------------
 1. Entra a vercel.com/new
 2. Arrastra la carpeta "web-site" completa.
@@ -60,5 +60,5 @@ La pagina lo disimula por CSS:
  - En la seccion azul oscura, Sabio va dentro de un circulo blanco.
 
 Si algun dia quieres que quede perfecto, pasa las dos imagenes por
-https://www.remove.bg (gratis), guardalas como PNG transparente
+https://www.remove.bg, guardalas como PNG transparente
 con los mismos nombres, y se vera aun mejor sin tocar el codigo.

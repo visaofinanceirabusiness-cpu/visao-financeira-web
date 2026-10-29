@@ -204,7 +204,8 @@ section{padding:88px 0}
 /* ---------- VISTAS (inicio / planes / servicios) ---------- */
 body[data-vista="home"] [data-view]:not([data-view="home"]):not([data-view="all"]),
 body[data-vista="planes"] [data-view]:not([data-view="planes"]):not([data-view="all"]),
-body[data-vista="servicios"] [data-view]:not([data-view="servicios"]):not([data-view="all"]){display:none}
+body[data-vista="servicios"] [data-view]:not([data-view="servicios"]):not([data-view="all"]),
+body[data-vista="faq"] [data-view]:not([data-view="faq"]):not([data-view="all"]){display:none}
 [id]{scroll-margin-top:96px}
 #contacto{border-top:1px solid var(--line)}
 .nav-links a.active{color:var(--green);font-weight:700}
@@ -1145,8 +1146,9 @@ footer ul a:hover{color:#7BE39B}
 </section>
 
 <!-- ===================== FAQ ===================== -->
-<section id="faq" data-view="home">
+<section id="faq" data-view="faq">
   <div class="wrap">
+    <a class="back-home" href="#inicio" data-pt="&larr; Voltar ao início">&larr; Volver al inicio</a>
     <div class="sec-head reveal">
       <span class="sec-tag" data-pt="Perguntas frequentes">Preguntas frecuentes</span>
       <h2 data-pt="O que costumam nos perguntar">Lo que suelen preguntarnos</h2>
@@ -1375,7 +1377,7 @@ document.querySelectorAll('.ttab').forEach(function(tab){
 
 
 /* ---------- VISTAS: Inicio / Planes / Servicios ---------- */
-var VISTA_DE = { planes:'planes', familia:'planes', servicios:'servicios' };
+var VISTA_DE = { planes:'planes', familia:'planes', servicios:'servicios', faq:'faq' };
 function vistaDeHash(id){ return id === 'contacto' ? document.body.dataset.vista : (VISTA_DE[id] || 'home'); }
 function irA(id, instantaneo){
   var vista = vistaDeHash(id);
@@ -1383,7 +1385,7 @@ function irA(id, instantaneo){
   document.body.dataset.vista = vista;
   document.querySelectorAll('.nav-links a').forEach(function(a){
     var h = (a.getAttribute('href') || '').slice(1);
-    a.classList.toggle('active', vista !== 'home' && vistaDeHash(h) === vista && (h === 'planes' || h === 'servicios'));
+    a.classList.toggle('active', vista !== 'home' && vistaDeHash(h) === vista && (h === 'planes' || h === 'servicios' || h === 'faq'));
   });
   var el = id ? document.getElementById(id) : null;
   if(!el || id === 'inicio'){ window.scrollTo({ top:0, behavior: (cambio || instantaneo) ? 'instant' : 'smooth' }); return; }

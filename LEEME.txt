@@ -62,3 +62,12 @@ La pagina lo disimula por CSS:
 Si algun dia quieres que quede perfecto, pasa las dos imagenes por
 https://www.remove.bg, guardalas como PNG transparente
 con los mismos nombres, y se vera aun mejor sin tocar el codigo.
+
+--------------------------------------------------
+SECCION "SOLUCIONES" (4 bloques con imagen)
+--------------------------------------------------
+Esta en index.html, id="soluciones" (justo despues de la portada).
+Imagenes: assets/solucion-*.webp (gestion-integrada, automatizacion,
+reglas-contables, analisis). Textos en espanol y portugues con data-pt.
+Los bloques alternan imagen izquierda/derecha solos (nth-child).
+Las imagenes y el video de la seccion "La App" NO se tocaron.

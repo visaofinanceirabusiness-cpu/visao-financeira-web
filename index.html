@@ -200,6 +200,17 @@ section{padding:88px 0}
 .card li svg{flex-shrink:0;width:17px;height:17px;margin-top:4px}
 
 
+
+/* ---------- VISTAS (inicio / planes / servicios) ---------- */
+body[data-vista="home"] [data-view]:not([data-view="home"]):not([data-view="all"]),
+body[data-vista="planes"] [data-view]:not([data-view="planes"]):not([data-view="all"]),
+body[data-vista="servicios"] [data-view]:not([data-view="servicios"]):not([data-view="all"]){display:none}
+[id]{scroll-margin-top:96px}
+#contacto{border-top:1px solid var(--line)}
+.nav-links a.active{color:var(--green);font-weight:700}
+.back-home{display:inline-flex;align-items:center;gap:6px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:14px;color:var(--navy);margin-bottom:22px;padding:8px 14px;border:1px solid var(--line);border-radius:999px;background:#fff;transition:.15s}
+.back-home:hover{border-color:var(--green);color:var(--green)}
+
 /* ---------- SOLUCIONES (4 bloques con imagen) ---------- */
 .solutions{display:grid;gap:64px}
 .solution{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
@@ -523,7 +534,7 @@ footer ul a:hover{color:#7BE39B}
 }
 </style>
 </head>
-<body>
+<body data-vista="home">
 
 <!-- ===================== BARRA DE PROMO ===================== -->
 <a href="https://wa.me/5548996094127?text=Hola%2C%20quiero%20pedir%20mi%20demo" data-pt-href="https://wa.me/5548996094127?text=Ol%C3%A1%2C%20quero%20pedir%20minha%20demo" target="_blank" rel="noopener" class="promo-bar" data-pt="<span class='emoji'>🎉</span>Peça sua demo agora! <strong>Fale conosco →</strong>">
@@ -562,7 +573,7 @@ footer ul a:hover{color:#7BE39B}
 </header>
 
 <!-- ===================== HERO ===================== -->
-<section class="hero" id="inicio">
+<section class="hero" id="inicio" data-view="home">
   <div class="wrap">
     <div class="hero-grid">
       <div>
@@ -597,7 +608,7 @@ footer ul a:hover{color:#7BE39B}
 </section>
 
 <!-- ===================== SOLUCIONES ===================== -->
-<section id="soluciones">
+<section id="soluciones" data-view="home">
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="sec-tag" data-pt="Soluções">Soluciones</span>
@@ -651,8 +662,9 @@ footer ul a:hover{color:#7BE39B}
 </section>
 
 <!-- ===================== SERVICIOS ===================== -->
-<section class="soft" id="servicios">
+<section class="soft" id="servicios" data-view="servicios">
   <div class="wrap">
+    <a class="back-home" href="#inicio" data-pt="&larr; Voltar ao início">&larr; Volver al inicio</a>
     <div class="sec-head reveal">
       <span class="sec-tag" data-pt="Nossos serviços">Nuestros servicios</span>
       <h2 data-pt="Tudo o que seu negócio precisa<br>para ter o controle">Todo lo que tu negocio necesita<br>para tener el control</h2>
@@ -733,7 +745,7 @@ footer ul a:hover{color:#7BE39B}
 </section>
 
 <!-- ===================== TRANSPARENCIA ===================== -->
-<section id="transparencia">
+<section id="transparencia" data-view="home">
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="sec-tag" data-pt="Transparência">Transparencia</span>
@@ -830,7 +842,7 @@ footer ul a:hover{color:#7BE39B}
 </section>
 
 <!-- ===================== PILARES ===================== -->
-<div class="pillars">
+<div class="pillars" data-view="home">
   <div class="wrap pillars-grid">
 
     <div class="pillar">
@@ -862,8 +874,9 @@ footer ul a:hover{color:#7BE39B}
 </div>
 
 <!-- ===================== PLANES ===================== -->
-<section class="soft" id="planes">
+<section class="soft" id="planes" data-view="planes">
   <div class="wrap">
+    <a class="back-home" href="#inicio" data-pt="&larr; Voltar ao início">&larr; Volver al inicio</a>
     <div class="sec-head reveal">
       <span class="sec-tag" data-pt="Planos">Planes</span>
       <h2 data-pt="Um plano para cada momento<br>do seu negócio ou da sua família">Un plan para cada momento<br>de tu negocio o tu familia</h2>
@@ -993,7 +1006,7 @@ footer ul a:hover{color:#7BE39B}
 </section>
 
 <!-- ===================== SABIO ===================== -->
-<section class="soft" id="sabio">
+<section class="soft" id="sabio" data-view="home">
   <div class="wrap">
     <div class="sabio-grid">
 
@@ -1079,7 +1092,7 @@ footer ul a:hover{color:#7BE39B}
 </section>
 
 <!-- ===================== APP ===================== -->
-<section class="app-band" id="app">
+<section class="app-band" id="app" data-view="home">
   <div class="wrap">
     <div class="app-grid">
 
@@ -1132,7 +1145,7 @@ footer ul a:hover{color:#7BE39B}
 </section>
 
 <!-- ===================== FAQ ===================== -->
-<section id="faq">
+<section id="faq" data-view="home">
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="sec-tag" data-pt="Perguntas frequentes">Preguntas frecuentes</span>
@@ -1176,7 +1189,7 @@ footer ul a:hover{color:#7BE39B}
 </section>
 
 <!-- ===================== CONTACTO ===================== -->
-<section class="soft" id="contacto">
+<section class="soft" id="contacto" data-view="all">
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="sec-tag" data-pt="Contato">Contacto</span>
@@ -1359,6 +1372,34 @@ document.querySelectorAll('.ttab').forEach(function(tab){
     });
   });
 });
+
+
+/* ---------- VISTAS: Inicio / Planes / Servicios ---------- */
+var VISTA_DE = { planes:'planes', familia:'planes', servicios:'servicios' };
+function vistaDeHash(id){ return id === 'contacto' ? document.body.dataset.vista : (VISTA_DE[id] || 'home'); }
+function irA(id, instantaneo){
+  var vista = vistaDeHash(id);
+  var cambio = document.body.dataset.vista !== vista;
+  document.body.dataset.vista = vista;
+  document.querySelectorAll('.nav-links a').forEach(function(a){
+    var h = (a.getAttribute('href') || '').slice(1);
+    a.classList.toggle('active', vista !== 'home' && vistaDeHash(h) === vista && (h === 'planes' || h === 'servicios'));
+  });
+  var el = id ? document.getElementById(id) : null;
+  if(!el || id === 'inicio'){ window.scrollTo({ top:0, behavior: (cambio || instantaneo) ? 'instant' : 'smooth' }); return; }
+  el.scrollIntoView({ behavior: (cambio || instantaneo) ? 'instant' : 'smooth', block:'start' });
+}
+document.querySelectorAll('a[href^="#"]').forEach(function(a){
+  a.addEventListener('click', function(e){
+    var id = a.getAttribute('href').slice(1);
+    if(!id) return;
+    e.preventDefault();
+    try { history.pushState(null, '', '#' + id); } catch(err){}
+    irA(id, false);
+  });
+});
+window.addEventListener('popstate', function(){ irA(location.hash.slice(1), true); });
+irA(location.hash.slice(1), true);
 
 /* ---------- APARICIÓN AL HACER SCROLL ---------- */
 var io = new IntersectionObserver(function(entries){

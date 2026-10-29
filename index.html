@@ -214,6 +214,16 @@ body[data-vista="transparencia"] [data-view]:not([data-view="transparencia"]):no
 .back-home{display:inline-flex;align-items:center;gap:6px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:14px;color:var(--navy);margin-bottom:22px;padding:8px 14px;border:1px solid var(--line);border-radius:999px;background:#fff;transition:.15s}
 .back-home:hover{border-color:var(--green);color:var(--green)}
 
+
+/* ---------- MENU SUPERIOR: toque sutil (subrayado animado) ---------- */
+@media(min-width:981px){
+  .nav-links a{position:relative;font-weight:600;letter-spacing:.005em;transition:color .15s,transform .15s}
+  .nav-links a::after{content:'';position:absolute;left:0;right:0;bottom:-7px;height:3px;border-radius:3px;background:linear-gradient(90deg,var(--green),var(--green-bright));transform:scaleX(0);transform-origin:left;transition:transform .25s ease}
+  .nav-links a:hover{transform:translateY(-1px)}
+  .nav-links a:hover::after{transform:scaleX(.55)}
+  .nav-links a.active::after{transform:scaleX(1)}
+}
+
 /* ---------- SOLUCIONES (4 bloques con imagen) ---------- */
 .solutions{display:grid;gap:64px}
 .solution{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}

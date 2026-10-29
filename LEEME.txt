@@ -71,3 +71,12 @@ Imagenes: assets/solucion-*.webp (gestion-integrada, automatizacion,
 reglas-contables, analisis). Textos en espanol y portugues con data-pt.
 Los bloques alternan imagen izquierda/derecha solos (nth-child).
 Las imagenes y el video de la seccion "La App" NO se tocaron.
+
+--------------------------------------------------
+VISTAS (agrupar secciones)
+--------------------------------------------------
+La pagina tiene 3 vistas: Inicio, Planes (incluye Familia) y Servicios.
+Cada seccion lleva data-view="home|planes|servicios|all" y el body
+data-vista decide cual se ve. Contacto (all) se ve siempre.
+Para mover una seccion de grupo, cambiar su data-view.
+Los enlaces #planes / #familia / #servicios cambian de vista solos.

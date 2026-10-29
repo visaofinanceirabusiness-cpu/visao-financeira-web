@@ -362,6 +362,34 @@ section{padding:88px 0}
 .familia-card .btn{width:100%;justify-content:center}
 @media(max-width:980px){.familia{padding:40px 26px}.familia-grid{grid-template-columns:1fr}}
 
+
+/* ---------- TRANSPARENCIA DINAMICA (linea de tiempo + pestañas) ---------- */
+.timeline{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:28px;max-width:960px;margin:0 auto 52px;position:relative}
+.timeline::before{content:'';position:absolute;left:16%;right:16%;top:22px;height:3px;background:linear-gradient(90deg,var(--green),var(--navy));opacity:.25;border-radius:2px}
+.timeline li{position:relative;text-align:center;padding:0 8px}
+.tl-dot{position:relative;z-index:1;display:grid;place-items:center;width:46px;height:46px;margin:0 auto 14px;border-radius:50%;background:#fff;border:3px solid var(--green);font-family:'Montserrat',sans-serif;font-weight:800;color:var(--navy);box-shadow:0 8px 20px rgba(30,140,60,.16)}
+.timeline h3{font-size:17px;margin-bottom:6px}
+.timeline p{font-size:14.5px}
+.tabs-hint{text-align:center;font-size:14px;font-weight:600;color:var(--navy);margin-bottom:14px}
+.ttabs{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:28px}
+.ttab{font-family:'Montserrat',sans-serif;font-weight:700;font-size:14.5px;color:var(--navy);background:#fff;border:2px solid var(--line);border-radius:999px;padding:11px 20px;cursor:pointer;transition:.18s;display:inline-flex;gap:8px;align-items:center}
+.ttab:hover{border-color:var(--green);transform:translateY(-2px)}
+.ttab.active{background:var(--navy);border-color:var(--navy);color:#fff;box-shadow:0 8px 20px rgba(20,38,94,.22)}
+.tpanel{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.tpanel.c3{grid-template-columns:repeat(3,1fr)}
+@media(max-width:860px){.tpanel,.tpanel.c3{grid-template-columns:1fr}}
+.tpanel[hidden]{display:none}
+.tpanel.active{animation:tpIn .35s ease}
+@keyframes tpIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.tpanel.active{animation:none}}
+.tcard{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px 26px 24px;box-shadow:var(--shadow);transition:.2s}
+.tcard:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
+.tcard.wide{grid-column:1/-1}
+.tcard-ic{display:grid;place-items:center;width:46px;height:46px;border-radius:13px;background:rgba(30,140,60,.1);font-size:22px;margin-bottom:14px}
+.tcard h3{font-size:17px;margin-bottom:8px}
+.tcard p{font-size:15px}
+@media(max-width:760px){.timeline{grid-template-columns:1fr;gap:22px}.timeline::before{display:none}.ttab{padding:10px 15px;font-size:13.5px}}
+
 /* ---------- FAQ ---------- */
 .faq{max-width:800px;margin:0 auto;display:grid;gap:14px}
 details{background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);overflow:hidden}
@@ -600,67 +628,184 @@ footer ul a:hover{color:#7BE39B}
   </div>
 </section>
 
+<!-- ===================== SERVICIOS ===================== -->
+<section class="soft" id="servicios">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag" data-pt="Nossos serviços">Nuestros servicios</span>
+      <h2 data-pt="Tudo o que seu negócio precisa<br>para ter o controle">Todo lo que tu negocio necesita<br>para tener el control</h2>
+      <p data-pt="Não entregamos apenas números: entregamos entendimento. Cada serviço é pensado para que você saiba exatamente em que ponto sua empresa está e para onde ela vai.">No entregamos solo números: entregamos entendimiento. Cada servicio está pensado
+         para que sepas exactamente en qué punto está tu empresa y hacia dónde va.</p>
+    </div>
+
+    <div class="cards">
+
+      <article class="card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4" stroke="#7BE39B"/></svg></div>
+        <h3 data-pt="Contabilidade organizada">Contabilidad organizada</h3>
+        <p data-pt="Sua contabilidade em dia, organizada e compreensível. Sem atrasos e sem uma linguagem que você não entende.">Tu contabilidad al día, ordenada y entendible. Sin atrasos y sin lenguaje que no comprendes.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#1E8C3C" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span data-pt="Registro de receitas e despesas">Registro de ingresos y gastos</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#1E8C3C" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span data-pt="Conciliação de contas e meios de pagamento">Conciliación de cuentas y medios de pago</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#1E8C3C" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span data-pt="Fechamentos mensais pontuais">Cierres mensuales puntuales</span></li>
+        </ul>
+      </article>
+
+      <article class="card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19h16"/><path d="M5 15l4.5-5 3.5 3.5L20 6" stroke="#7BE39B" stroke-width="2.3"/><path d="M15.5 6H20v4.5" stroke="#7BE39B" stroke-width="2.3"/></svg></div>
+        <h3 data-pt="Análises e relatórios">Análisis y reportes</h3>
+        <p data-pt="Relatórios claros que respondem o que realmente importa: estou lucrando? para onde está indo meu dinheiro?">Informes claros que responden lo que de verdad importa: ¿estoy ganando? ¿dónde se me va el dinero?</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#1E8C3C" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span data-pt="Demonstrativo de resultados explicado">Estado de resultados explicado</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#1E8C3C" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span data-pt="Margens por produto ou serviço">Márgenes por producto o servicio</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#1E8C3C" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span data-pt="Indicadores de saúde financeira">Indicadores de salud financiera</span></li>
+        </ul>
+      </article>
+
+      <article class="card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="6" width="19" height="13" rx="2.5"/><path d="M2.5 10.5h19" stroke="#7BE39B" stroke-width="2.2"/><path d="M6.5 15h4"/></svg></div>
+        <h3 data-pt="Controle de fluxo de caixa">Control de flujo de caja</h3>
+        <p data-pt="Saber quanto entra, quanto sai e quanto sobra. A diferença entre sobreviver e planejar.">Saber cuánto entra, cuánto sale y cuánto te queda. La diferencia entre sobrevivir y planificar.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#1E8C3C" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span data-pt="Contas a receber e a pagar">Cuentas por cobrar y por pagar</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#1E8C3C" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span data-pt="Projeção de caixa">Proyección de caja</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#1E8C3C" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span data-pt="Alertas antes que falte dinheiro">Alertas antes de que falte dinero</span></li>
+        </ul>
+      </article>
+
+      <article class="card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v5l3.2 2" stroke="#7BE39B" stroke-width="2.3"/></svg></div>
+        <h3 data-pt="Planejamento e orçamento">Planificación y presupuesto</h3>
+        <p data-pt="Definimos metas realistas e medimos mês a mês se você está cumprindo.">Definimos metas realistas y medimos mes a mes si las estás cumpliendo.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#1E8C3C" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span data-pt="Orçamento anual e mensal">Presupuesto anual y mensual</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#1E8C3C" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span data-pt="Ponto de equilíbrio do seu negócio">Punto de equilibrio de tu negocio</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#1E8C3C" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span data-pt="Comparativo real vs. planejado">Comparativo real vs. planeado</span></li>
+        </ul>
+      </article>
+
+      <article class="card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7.5 3v6c0 4.6-3.1 7.9-7.5 9.2C7.6 19.9 4.5 16.6 4.5 12V6z"/><path d="M9 12l2.2 2.2L15.5 10" stroke="#7BE39B" stroke-width="2.4"/></svg></div>
+        <h3 data-pt="Conformidade e obrigações">Cumplimiento y obligaciones</h3>
+        <p data-pt="Que nenhum vencimento pegue você de surpresa: avisamos com antecedência para você se organizar.">Que nunca te tome por sorpresa un vencimiento: te avisamos a tiempo para que puedas organizarte.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#1E8C3C" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span data-pt="Calendário de obrigações">Calendario de obligaciones</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#1E8C3C" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span data-pt="Documentação em ordem e com backup">Documentación en orden y respaldada</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#1E8C3C" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span data-pt="Lembretes antecipados">Recordatorios anticipados</span></li>
+        </ul>
+      </article>
+
+      <article class="card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8.5" r="3.2"/><path d="M3.2 19c0-3.2 2.6-5.2 5.8-5.2s5.8 2 5.8 5.2"/><circle cx="17" cy="9" r="2.6" stroke="#7BE39B" stroke-width="2.2"/><path d="M16 14.2c2.7.2 4.8 2.1 4.8 4.8" stroke="#7BE39B" stroke-width="2.2"/></svg></div>
+        <h3 data-pt="Assessoria e acompanhamento">Asesoría y acompañamiento</h3>
+        <p data-pt="Um aliado estratégico ao seu lado, não um fornecedor que aparece uma vez por ano.">Un aliado estratégico a tu lado, no un proveedor que aparece una vez al año.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#1E8C3C" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span data-pt="Reunião periódica de revisão">Reunión periódica de revisión</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#1E8C3C" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span data-pt="Canal direto para suas dúvidas">Canal directo para tus dudas</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#1E8C3C" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span data-pt="Recomendações para crescer">Recomendaciones para crecer</span></li>
+        </ul>
+      </article>
+
+    </div>
+  </div>
+</section>
+
 <!-- ===================== TRANSPARENCIA ===================== -->
 <section id="transparencia">
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="sec-tag" data-pt="Transparência">Transparencia</span>
       <h2 data-pt="Como construímos a Visão Financeira">Cómo construimos Visão Financeira</h2>
-      <p data-pt="A Visão Financeira começou há 3 anos como uma planilha de Google Sheets, criada para organizar as finanças de um negócio real. Com a chegada das ferramentas de inteligência artificial, conseguimos transformar essa planilha em uma plataforma completa — e decidimos abri-la para novos clientes. Sabemos que nem todo mundo conhece estes nomes, então explicamos de forma simples.">
-        Visão Financeira empezó hace 3 años como una planilla de Google Sheets, armada para
-        ordenar las finanzas de un negocio real. Con la llegada de las herramientas de
-        inteligencia artificial, pudimos convertir esa planilla en una plataforma completa —
-        y ahí decidimos abrirla a nuevos clientes. Sabemos que no todo el mundo conoce estos
-        nombres, así que te lo explicamos simple.
-      </p>
+      <p data-pt="Sabemos que nem todo mundo conhece estes nomes, então explicamos de forma simples.">Sabemos que no todo el mundo conoce estos nombres, así que te lo explicamos simple.</p>
     </div>
 
-    <div class="faq">
-      <details class="reveal">
-        <summary data-pt="Onde vive a sua informação?">¿Dónde vive tu información?</summary>
-        <p data-pt="Em Supabase, um serviço especializado em guardar dados com altos padrões de segurança. Ali sua informação fica isolada: nenhuma outra empresa que usa a Visão Financeira pode vê-la.">En Supabase, un servicio especializado en guardar datos con altos estándares de seguridad. Ahí tu información queda aislada: ninguna otra empresa que use Visão Financeira puede ver la tuya.</p>
-      </details>
-      <details class="reveal">
-        <summary data-pt="Por que o app carrega rápido?">¿Por qué la app carga rápido?</summary>
-        <p data-pt="A hospedamos na Vercel, um serviço que a distribui em servidores ao redor do mundo.">La alojamos en Vercel, un servicio que la distribuye en servidores por todo el mundo.</p>
-      </details>
-      <details class="reveal">
-        <summary data-pt="Como cuidamos do código?">¿Cómo cuidamos el código?</summary>
-        <p data-pt="Todo o código vive no GitHub, que guarda um histórico completo de cada mudança — assim nada se perde.">Todo el código vive en GitHub, que guarda un historial completo de cada cambio — así nunca se pierde nada.</p>
-      </details>
-      <details class="reveal">
-        <summary data-pt="Vocês usam inteligência artificial?">¿Usan inteligencia artificial?</summary>
-        <p data-pt="Sim, e contamos exatamente para quê: usamos ferramentas de assistência de inteligência artificial — como ChatGPT (OpenAI) e Claude (Anthropic) — durante o desenvolvimento do código e para criar algumas imagens do app e do site. São ferramentas de trabalho da nossa equipe, não algo que atende os nossos clientes nem que toma decisões por você.">Sí, y te contamos para qué exactamente: usamos herramientas de asistencia de inteligencia artificial — como ChatGPT (OpenAI) y Claude (Anthropic) — durante el desarrollo del código y para crear algunas imágenes de la app y el sitio. Son herramientas de trabajo de nuestro equipo, no algo que atiende a nuestros clientes ni toma decisiones por vos.</p>
-      </details>
-      <details class="reveal">
-        <summary data-pt="Então, quem me atende?">Entonces, ¿quién me atiende?</summary>
-        <p data-pt="Sempre uma pessoa. Quando você escreve por WhatsApp ou e-mail, quem responde é um humano.">Siempre una persona. Cuando escribís por WhatsApp o correo, te responde un humano.</p>
-      </details>
-      <details class="reveal">
-        <summary data-pt="O que é o Sabio Online?">¿Qué es Sabio Online?</summary>
-        <p data-pt="Dentro do app você encontra o Sabio, sua ajuda para registrar informação sem se complicar com termos contábeis. Embora pareça uma conversa, o Sabio Online não é um chatbot de inteligência artificial — ele não &ldquo;pensa&rdquo; nem gera respostas novas nem aprende sozinho. É o resultado de uma matriz de regras contábeis montada à mão pela nossa equipe. Quando você conta o que aconteceu (&ldquo;vendi algo e me pagaram em dinheiro&rdquo;), o Sabio busca a regra exata e monta o registro contábil correto — débito, crédito e tudo resolvido por você. Sem improviso, e sem que sua informação saia para nenhuma IA externa.">Dentro de la app vas a encontrar a Sabio, tu ayuda para cargar información sin complicarte con términos contables. Aunque parece una conversación, Sabio Online no es un chatbot de inteligencia artificial — no &ldquo;piensa&rdquo; ni genera respuestas nuevas ni aprende solo. Es el resultado de una matriz de reglas contables armada a mano por nuestro equipo. Cuando le contás qué pasó (&ldquo;vendí algo y me pagaron en efectivo&rdquo;), Sabio busca la regla exacta y arma el registro contable correcto — débito, crédito y todo resuelto por vos. Sin improvisación, y sin que tu información salga hacia ninguna IA externa.</p>
-      </details>
-      <details class="reveal">
-        <summary data-pt="O que é a matriz de operações?">¿Qué es la matriz de operaciones?</summary>
-        <p data-pt="É o &ldquo;mapa contábil&rdquo; do seu negócio: diz ao sistema qual conta usar como débito e qual como crédito para cada movimento. Não é igual para todos — é montada combinando suas próprias decisões (plano de contas, categorias, formas de pagamento, produtos). Cada vez que você muda algo em Configurações, o sistema a recalcula sozinho, sem que você precise entender de contabilidade para que funcione bem.">Es el &ldquo;mapa contable&rdquo; de tu negocio: le dice al sistema qué cuenta usar como débito y cuál como crédito para cada movimiento. No es igual para todos — se arma combinando tus propias decisiones (plan de cuentas, categorías, formas de pago, productos). Cada vez que cambiás algo en Configurações, el sistema la recalcula sola, sin que tengas que entender de contabilidad para que funcione bien.</p>
-      </details>
-      <details class="reveal">
-        <summary data-pt="A Visão Financeira substitui meu contador?">¿Visão Financeira reemplaza a mi contador?</summary>
-        <p data-pt="Não. Damos suporte financeiro e contábil para você organizar e entender seus números, mas não substituímos um contador. Também não podemos garantir lucros nem resultados positivos: o que a plataforma oferece é segurança e confiança nos dados que você registra, para decidir melhor.">No. Damos soporte financiero y contable para que ordenes y entiendas tus números, pero no reemplazamos a un contador. Tampoco podemos garantizar ganancias ni resultados positivos: lo que la plataforma aporta es seguridad y confianza en los datos que cargás, para decidir mejor.</p>
-      </details>
-      <details class="reveal">
-        <summary data-pt="O que NUNCA vamos pedir?">¿Qué NUNCA te vamos a pedir?</summary>
-        <p data-pt="Nunca vamos pedir sua senha, nem dados bancários (como o número do seu cartão ou a senha do seu banco). Também não precisamos do seu CPF (se você é do Brasil) nem do seu DNI (se você é da Argentina) — não pedimos porque não precisamos disso para que a plataforma funcione.">Nunca te vamos a pedir tu contraseña, ni datos bancarios (como el número de tu tarjeta o la clave de tu banco). Tampoco necesitamos tu CPF (si sos de Brasil) ni tu DNI (si sos de Argentina) — no los pedimos porque no los necesitamos para que la plataforma funcione.</p>
-      </details>
-      <details class="reveal">
-        <summary data-pt="O que acontece se meus dados não forem exatos?">¿Qué pasa si mis datos no son exactos? (quizás lo más importante)</summary>
-        <p data-pt="O sistema não consegue, por si só, distinguir um dado verdadeiro de um falso — é você quem dá legitimidade à informação que carrega. A Visão Financeira é uma ferramenta para tomar decisões baseadas em dados: quanto mais reais forem esses dados, melhores serão suas decisões. Mesmo assim, é sempre uma boa ideia consultar o suporte da Visão Financeira para entender melhor o que os seus próprios números estão te dizendo.">El sistema no puede, por sí solo, distinguir un dato verdadero de uno falso — sos vos quien le da legitimidad a la información que cargás. Visão Financeira es una herramienta para tomar decisiones basadas en datos: cuanto más reales sean esos datos, mejores van a ser tus decisiones. Aun así, siempre es una buena idea consultar al soporte de Visão Financeira para entender mejor qué te están diciendo tus propios números.</p>
-      </details>
+    <ol class="timeline reveal">
+      <li>
+        <span class="tl-dot">1</span>
+        <h3 data-pt="Há 3 anos">Hace 3 años</h3>
+        <p data-pt="Começou como uma planilha de Google Sheets, criada para organizar as finanças de um negócio real.">Empezó como una planilla de Google Sheets, armada para ordenar las finanzas de un negocio real.</p>
+      </li>
+      <li>
+        <span class="tl-dot">2</span>
+        <h3 data-pt="Chegou a IA">Llegó la inteligencia artificial</h3>
+        <p data-pt="Com as ferramentas de inteligência artificial, conseguimos transformar essa planilha em uma plataforma completa.">Con las herramientas de inteligencia artificial pudimos convertir esa planilla en una plataforma completa.</p>
+      </li>
+      <li>
+        <span class="tl-dot">3</span>
+        <h3 data-pt="Hoje">Hoy</h3>
+        <p data-pt="Decidimos abri-la para novos clientes: MEI e pequenos negócios no Brasil, monotributistas e pequenos negócios na Argentina.">Decidimos abrirla a nuevos clientes: monotributistas y pequeños negocios en Argentina, MEI y pequeños negocios en Brasil.</p>
+      </li>
+    </ol>
+
+    <p class="tabs-hint reveal" data-pt="Toque em cada tema para ver como funciona:">Tocá cada tema para ver cómo funciona:</p>
+    <div class="ttabs reveal" role="tablist">
+      <button type="button" role="tab" class="ttab active" id="tab-tec" aria-selected="true" aria-controls="tab-tec-p"><span aria-hidden="true">🧱</span> <span data-pt="Tecnologia">Tecnología</span></button>
+      <button type="button" role="tab" class="ttab" id="tab-ia" aria-selected="false" aria-controls="tab-ia-p"><span aria-hidden="true">🤖</span> <span data-pt="IA e Sabio">IA y Sabio</span></button>
+      <button type="button" role="tab" class="ttab" id="tab-dat" aria-selected="false" aria-controls="tab-dat-p"><span aria-hidden="true">🔒</span> <span data-pt="Seus dados">Tus datos</span></button>
+      <button type="button" role="tab" class="ttab" id="tab-per" aria-selected="false" aria-controls="tab-per-p"><span aria-hidden="true">🤝</span> <span data-pt="As pessoas">Las personas</span></button>
+    </div>
+    <div class="tpanels reveal">
+      <div class="tpanel c3 active" id="tab-tec-p" role="tabpanel" aria-labelledby="tab-tec">
+        <article class="tcard">
+          <span class="tcard-ic" aria-hidden="true">🗄️</span>
+          <h3 data-pt="Onde vive a sua informação?">¿Dónde vive tu información?</h3>
+          <p data-pt="Em Supabase, um serviço especializado em guardar dados com altos padrões de segurança. Ali sua informação fica isolada: nenhuma outra empresa que usa a Visão Financeira pode vê-la.">En Supabase, un servicio especializado en guardar datos con altos estándares de seguridad. Ahí tu información queda aislada: ninguna otra empresa que use Visão Financeira puede ver la tuya.</p>
+        </article>
+        <article class="tcard">
+          <span class="tcard-ic" aria-hidden="true">⚡</span>
+          <h3 data-pt="Por que o app carrega rápido?">¿Por qué la app carga rápido?</h3>
+          <p data-pt="A hospedamos na Vercel, um serviço que a distribui em servidores ao redor do mundo.">La alojamos en Vercel, un servicio que la distribuye en servidores por todo el mundo.</p>
+        </article>
+        <article class="tcard">
+          <span class="tcard-ic" aria-hidden="true">🧬</span>
+          <h3 data-pt="Como cuidamos do código?">¿Cómo cuidamos el código?</h3>
+          <p data-pt="Todo o código vive no GitHub, que guarda um histórico completo de cada mudança — assim nada se perde.">Todo el código vive en GitHub, que guarda un historial completo de cada cambio — así nunca se pierde nada.</p>
+        </article>
+      </div>
+      <div class="tpanel" id="tab-ia-p" role="tabpanel" aria-labelledby="tab-ia" hidden>
+        <article class="tcard">
+          <span class="tcard-ic" aria-hidden="true">✨</span>
+          <h3 data-pt="Vocês usam inteligência artificial?">¿Usan inteligencia artificial?</h3>
+          <p data-pt="Sim, e contamos exatamente para quê: usamos ferramentas de assistência de inteligência artificial — como ChatGPT (OpenAI) e Claude (Anthropic) — durante o desenvolvimento do código e para criar algumas imagens do app e do site. São ferramentas de trabalho da nossa equipe, não algo que atende os nossos clientes nem que toma decisões por você.">Sí, y te contamos para qué exactamente: usamos herramientas de asistencia de inteligencia artificial — como ChatGPT (OpenAI) y Claude (Anthropic) — durante el desarrollo del código y para crear algunas imágenes de la app y el sitio. Son herramientas de trabajo de nuestro equipo, no algo que atiende a nuestros clientes ni toma decisiones por vos.</p>
+        </article>
+        <article class="tcard">
+          <span class="tcard-ic" aria-hidden="true">🗺️</span>
+          <h3 data-pt="O que é a matriz de operações?">¿Qué es la matriz de operaciones?</h3>
+          <p data-pt="É o &ldquo;mapa contábil&rdquo; do seu negócio: diz ao sistema qual conta usar como débito e qual como crédito para cada movimento. Não é igual para todos — é montada combinando suas próprias decisões (plano de contas, categorias, formas de pagamento, produtos). Cada vez que você muda algo em Configurações, o sistema a recalcula sozinho, sem que você precise entender de contabilidade para que funcione bem.">Es el &ldquo;mapa contable&rdquo; de tu negocio: le dice al sistema qué cuenta usar como débito y cuál como crédito para cada movimiento. No es igual para todos — se arma combinando tus propias decisiones (plan de cuentas, categorías, formas de pago, productos). Cada vez que cambiás algo en Configurações, el sistema la recalcula sola, sin que tengas que entender de contabilidad para que funcione bien.</p>
+        </article>
+        <article class="tcard wide">
+          <span class="tcard-ic" aria-hidden="true">🦉</span>
+          <h3 data-pt="O que é o Sabio Online?">¿Qué es Sabio Online?</h3>
+          <p data-pt="Dentro do app você encontra o Sabio, sua ajuda para registrar informação sem se complicar com termos contábeis. Embora pareça uma conversa, o Sabio Online não é um chatbot de inteligência artificial — ele não &ldquo;pensa&rdquo; nem gera respostas novas nem aprende sozinho. É o resultado de uma matriz de regras contábeis montada à mão pela nossa equipe. Quando você conta o que aconteceu (&ldquo;vendi algo e me pagaram em dinheiro&rdquo;), o Sabio busca a regra exata e monta o registro contábil correto — débito, crédito e tudo resolvido por você. Sem improviso, e sem que sua informação saia para nenhuma IA externa.">Dentro de la app vas a encontrar a Sabio, tu ayuda para cargar información sin complicarte con términos contables. Aunque parece una conversación, Sabio Online no es un chatbot de inteligencia artificial — no &ldquo;piensa&rdquo; ni genera respuestas nuevas ni aprende solo. Es el resultado de una matriz de reglas contables armada a mano por nuestro equipo. Cuando le contás qué pasó (&ldquo;vendí algo y me pagaron en efectivo&rdquo;), Sabio busca la regla exacta y arma el registro contable correcto — débito, crédito y todo resuelto por vos. Sin improvisación, y sin que tu información salga hacia ninguna IA externa.</p>
+        </article>
+      </div>
+      <div class="tpanel" id="tab-dat-p" role="tabpanel" aria-labelledby="tab-dat" hidden>
+        <article class="tcard">
+          <span class="tcard-ic" aria-hidden="true">🚫</span>
+          <h3 data-pt="O que NUNCA vamos pedir?">¿Qué NUNCA te vamos a pedir?</h3>
+          <p data-pt="Nunca vamos pedir sua senha, nem dados bancários (como o número do seu cartão ou a senha do seu banco). Também não precisamos do seu CPF (se você é do Brasil) nem do seu DNI (se você é da Argentina) — não pedimos porque não precisamos disso para que a plataforma funcione.">Nunca te vamos a pedir tu contraseña, ni datos bancarios (como el número de tu tarjeta o la clave de tu banco). Tampoco necesitamos tu CPF (si sos de Brasil) ni tu DNI (si sos de Argentina) — no los pedimos porque no los necesitamos para que la plataforma funcione.</p>
+        </article>
+        <article class="tcard">
+          <span class="tcard-ic" aria-hidden="true">⚠️</span>
+          <h3 data-pt="O que acontece se meus dados não forem exatos?">¿Qué pasa si mis datos no son exactos? (quizás lo más importante)</h3>
+          <p data-pt="O sistema não consegue, por si só, distinguir um dado verdadeiro de um falso — é você quem dá legitimidade à informação que carrega. A Visão Financeira é uma ferramenta para tomar decisões baseadas em dados: quanto mais reais forem esses dados, melhores serão suas decisões. Mesmo assim, é sempre uma boa ideia consultar o suporte da Visão Financeira para entender melhor o que os seus próprios números estão te dizendo.">El sistema no puede, por sí solo, distinguir un dato verdadero de uno falso — sos vos quien le da legitimidad a la información que cargás. Visão Financeira es una herramienta para tomar decisiones basadas en datos: cuanto más reales sean esos datos, mejores van a ser tus decisiones. Aun así, siempre es una buena idea consultar al soporte de Visão Financeira para entender mejor qué te están diciendo tus propios números.</p>
+        </article>
+      </div>
+      <div class="tpanel" id="tab-per-p" role="tabpanel" aria-labelledby="tab-per" hidden>
+        <article class="tcard">
+          <span class="tcard-ic" aria-hidden="true">💬</span>
+          <h3 data-pt="Então, quem me atende?">Entonces, ¿quién me atiende?</h3>
+          <p data-pt="Sempre uma pessoa. Quando você escreve por WhatsApp ou e-mail, quem responde é um humano.">Siempre una persona. Cuando escribís por WhatsApp o correo, te responde un humano.</p>
+        </article>
+        <article class="tcard">
+          <span class="tcard-ic" aria-hidden="true">🧾</span>
+          <h3 data-pt="A Visão Financeira substitui meu contador?">¿Visão Financeira reemplaza a mi contador?</h3>
+          <p data-pt="Não. Damos suporte financeiro e contábil para você organizar e entender seus números, mas não substituímos um contador. Também não podemos garantir lucros nem resultados positivos: o que a plataforma oferece é segurança e confiança nos dados que você registra, para decidir melhor.">No. Damos soporte financiero y contable para que ordenes y entiendas tus números, pero no reemplazamos a un contador. Tampoco podemos garantizar ganancias ni resultados positivos: lo que la plataforma aporta es seguridad y confianza en los datos que cargás, para decidir mejor.</p>
+        </article>
+      </div>
     </div>
   </div>
 </section>
-
-
 
 <!-- ===================== PILARES ===================== -->
 <div class="pillars">
@@ -822,88 +967,6 @@ footer ul a:hover{color:#7BE39B}
       y te recomendamos el adecuado, sin compromiso.
     </p>
     <p class="disclaimer reveal" data-pt="A Visão Financeira não substitui um contador e não garante lucros nem resultados positivos.">Visão Financeira no reemplaza a un contador y no garantiza ganancias ni resultados positivos.</p>
-  </div>
-</section>
-
-<!-- ===================== SERVICIOS ===================== -->
-<section id="servicios">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="sec-tag" data-pt="Nossos serviços">Nuestros servicios</span>
-      <h2 data-pt="Tudo o que seu negócio precisa<br>para ter o controle">Todo lo que tu negocio necesita<br>para tener el control</h2>
-      <p data-pt="Não entregamos apenas números: entregamos entendimento. Cada serviço é pensado para que você saiba exatamente em que ponto sua empresa está e para onde ela vai.">No entregamos solo números: entregamos entendimiento. Cada servicio está pensado
-         para que sepas exactamente en qué punto está tu empresa y hacia dónde va.</p>
-    </div>
-
-    <div class="cards">
-
-      <article class="card reveal">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4" stroke="#7BE39B"/></svg></div>
-        <h3 data-pt="Contabilidade organizada">Contabilidad organizada</h3>
-        <p data-pt="Sua contabilidade em dia, organizada e compreensível. Sem atrasos e sem uma linguagem que você não entende.">Tu contabilidad al día, ordenada y entendible. Sin atrasos y sin lenguaje que no comprendes.</p>
-        <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="#1E8C3C" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span data-pt="Registro de receitas e despesas">Registro de ingresos y gastos</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="#1E8C3C" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span data-pt="Conciliação de contas e meios de pagamento">Conciliación de cuentas y medios de pago</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="#1E8C3C" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span data-pt="Fechamentos mensais pontuais">Cierres mensuales puntuales</span></li>
-        </ul>
-      </article>
-
-      <article class="card reveal">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19h16"/><path d="M5 15l4.5-5 3.5 3.5L20 6" stroke="#7BE39B" stroke-width="2.3"/><path d="M15.5 6H20v4.5" stroke="#7BE39B" stroke-width="2.3"/></svg></div>
-        <h3 data-pt="Análises e relatórios">Análisis y reportes</h3>
-        <p data-pt="Relatórios claros que respondem o que realmente importa: estou lucrando? para onde está indo meu dinheiro?">Informes claros que responden lo que de verdad importa: ¿estoy ganando? ¿dónde se me va el dinero?</p>
-        <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="#1E8C3C" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span data-pt="Demonstrativo de resultados explicado">Estado de resultados explicado</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="#1E8C3C" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span data-pt="Margens por produto ou serviço">Márgenes por producto o servicio</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="#1E8C3C" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span data-pt="Indicadores de saúde financeira">Indicadores de salud financiera</span></li>
-        </ul>
-      </article>
-
-      <article class="card reveal">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="6" width="19" height="13" rx="2.5"/><path d="M2.5 10.5h19" stroke="#7BE39B" stroke-width="2.2"/><path d="M6.5 15h4"/></svg></div>
-        <h3 data-pt="Controle de fluxo de caixa">Control de flujo de caja</h3>
-        <p data-pt="Saber quanto entra, quanto sai e quanto sobra. A diferença entre sobreviver e planejar.">Saber cuánto entra, cuánto sale y cuánto te queda. La diferencia entre sobrevivir y planificar.</p>
-        <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="#1E8C3C" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span data-pt="Contas a receber e a pagar">Cuentas por cobrar y por pagar</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="#1E8C3C" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span data-pt="Projeção de caixa">Proyección de caja</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="#1E8C3C" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span data-pt="Alertas antes que falte dinheiro">Alertas antes de que falte dinero</span></li>
-        </ul>
-      </article>
-
-      <article class="card reveal">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v5l3.2 2" stroke="#7BE39B" stroke-width="2.3"/></svg></div>
-        <h3 data-pt="Planejamento e orçamento">Planificación y presupuesto</h3>
-        <p data-pt="Definimos metas realistas e medimos mês a mês se você está cumprindo.">Definimos metas realistas y medimos mes a mes si las estás cumpliendo.</p>
-        <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="#1E8C3C" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span data-pt="Orçamento anual e mensal">Presupuesto anual y mensual</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="#1E8C3C" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span data-pt="Ponto de equilíbrio do seu negócio">Punto de equilibrio de tu negocio</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="#1E8C3C" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span data-pt="Comparativo real vs. planejado">Comparativo real vs. planeado</span></li>
-        </ul>
-      </article>
-
-      <article class="card reveal">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7.5 3v6c0 4.6-3.1 7.9-7.5 9.2C7.6 19.9 4.5 16.6 4.5 12V6z"/><path d="M9 12l2.2 2.2L15.5 10" stroke="#7BE39B" stroke-width="2.4"/></svg></div>
-        <h3 data-pt="Conformidade e obrigações">Cumplimiento y obligaciones</h3>
-        <p data-pt="Que nenhum vencimento pegue você de surpresa: avisamos com antecedência para você se organizar.">Que nunca te tome por sorpresa un vencimiento: te avisamos a tiempo para que puedas organizarte.</p>
-        <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="#1E8C3C" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span data-pt="Calendário de obrigações">Calendario de obligaciones</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="#1E8C3C" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span data-pt="Documentação em ordem e com backup">Documentación en orden y respaldada</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="#1E8C3C" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span data-pt="Lembretes antecipados">Recordatorios anticipados</span></li>
-        </ul>
-      </article>
-
-      <article class="card reveal">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8.5" r="3.2"/><path d="M3.2 19c0-3.2 2.6-5.2 5.8-5.2s5.8 2 5.8 5.2"/><circle cx="17" cy="9" r="2.6" stroke="#7BE39B" stroke-width="2.2"/><path d="M16 14.2c2.7.2 4.8 2.1 4.8 4.8" stroke="#7BE39B" stroke-width="2.2"/></svg></div>
-        <h3 data-pt="Assessoria e acompanhamento">Asesoría y acompañamiento</h3>
-        <p data-pt="Um aliado estratégico ao seu lado, não um fornecedor que aparece uma vez por ano.">Un aliado estratégico a tu lado, no un proveedor que aparece una vez al año.</p>
-        <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="#1E8C3C" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span data-pt="Reunião periódica de revisão">Reunión periódica de revisión</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="#1E8C3C" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span data-pt="Canal direto para suas dúvidas">Canal directo para tus dudas</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="#1E8C3C" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span data-pt="Recomendações para crescer">Recomendaciones para crecer</span></li>
-        </ul>
-      </article>
-
-    </div>
   </div>
 </section>
 
@@ -1278,6 +1341,21 @@ var saved = null;
 try { saved = localStorage.getItem('vf_lang'); } catch(e){}
 var nav = (navigator.language || 'es').toLowerCase();
 applyLang(saved || (nav.indexOf('pt') === 0 ? 'pt' : 'es'));
+
+
+/* ---------- PESTAÑAS DE TRANSPARENCIA ---------- */
+document.querySelectorAll('.ttab').forEach(function(tab){
+  tab.addEventListener('click', function(){
+    document.querySelectorAll('.ttab').forEach(function(t){
+      var on = (t === tab);
+      t.classList.toggle('active', on);
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+      var panel = document.getElementById(t.getAttribute('aria-controls'));
+      panel.hidden = !on;
+      panel.classList.toggle('active', on);
+    });
+  });
+});
 
 /* ---------- APARICIÓN AL HACER SCROLL ---------- */
 var io = new IntersectionObserver(function(entries){

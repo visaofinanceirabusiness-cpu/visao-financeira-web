@@ -12,7 +12,7 @@ YA ESTA CONFIGURADO
   WhatsApp : +55 48 99609 4127
   Correo   : visaofinanceirabusiness@gmail.com
   App      : https://vision-finaciera.vercel.app
-  Planes   : R$ 60 / R$ 100 / R$ 120 por mes
+  Perfiles : sin precios en la pagina (se negocia al contactar)
 
 --------------------------------------------------
 IDIOMAS
@@ -80,3 +80,12 @@ Cada seccion lleva data-view="home|planes|servicios|all" y el body
 data-vista decide cual se ve. Contacto (all) se ve siempre.
 Para mover una seccion de grupo, cambiar su data-view.
 Los enlaces #planes / #familia / #servicios cambian de vista solos.
+
+--------------------------------------------------
+PERFILES (antes 'Planes')
+--------------------------------------------------
+La vista #perfiles reemplaza a Planes: Familia, Servicios, Comercial,
+Produccion y Mixto, de menor a mayor complejidad, SIN precios.
+Cada tarjeta lleva .perfil + clase de color (fam/ser/com/pro/mix);
+el color sale de la variable --c. Los enlaces viejos #planes y #familia
+siguen abriendo la vista. 'Valor a conversar' lleva a WhatsApp.

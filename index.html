@@ -201,9 +201,9 @@ section{padding:88px 0}
 
 
 
-/* ---------- VISTAS (inicio / planes / servicios) ---------- */
+/* ---------- VISTAS (inicio / perfiles / servicios / ...) ---------- */
 body[data-vista="home"] [data-view]:not([data-view="home"]):not([data-view="all"]),
-body[data-vista="planes"] [data-view]:not([data-view="planes"]):not([data-view="all"]),
+body[data-vista="perfiles"] [data-view]:not([data-view="perfiles"]):not([data-view="all"]),
 body[data-vista="servicios"] [data-view]:not([data-view="servicios"]):not([data-view="all"]),
 body[data-vista="faq"] [data-view]:not([data-view="faq"]):not([data-view="all"]),
 body[data-vista="sabio"] [data-view]:not([data-view="sabio"]):not([data-view="all"]),
@@ -223,6 +223,63 @@ body[data-vista="transparencia"] [data-view]:not([data-view="transparencia"]):no
   .nav-links a:hover::after{transform:scaleX(.55)}
   .nav-links a.active::after{transform:scaleX(1)}
 }
+
+
+/* ---------- PERFILES ---------- */
+.perfiles{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:stretch}
+.perfil{--c:#14265E;background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column;transition:.22s}
+.perfil:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg)}
+.perfil.fam{--c:#db2777}.perfil.ser{--c:#2563eb}.perfil.com{--c:#16a34a}.perfil.pro{--c:#ea580c}.perfil.mix{--c:#7c3aed}
+.perfil-head{background:var(--c);color:#fff;padding:24px 24px 20px;text-align:center}
+.perfil-emoji{display:grid;place-items:center;width:52px;height:52px;margin:0 auto 10px;border-radius:50%;background:rgba(255,255,255,.2);font-size:26px}
+.perfil-head h3{color:#fff;font-size:26px;font-weight:800;margin-bottom:6px}
+.perfil-head p{font-size:14px;color:rgba(255,255,255,.9);line-height:1.4;min-height:2.8em}
+.perfil-nivel{display:flex;align-items:center;justify-content:center;gap:10px;padding:14px 18px 4px;font-size:12.5px;font-weight:600;color:var(--body);letter-spacing:.04em;text-transform:uppercase}
+.perfil-nivel b{color:var(--c)}
+.perfil-nivel .dots{display:inline-flex;gap:4px}
+.perfil-nivel .dots i{width:9px;height:9px;border-radius:50%;background:var(--line);display:block}
+.perfil-nivel .dots i.on{background:var(--c)}
+.perfil-adv{list-style:none;display:grid;gap:12px;padding:16px 24px 6px;flex:1}
+.perfil-adv li{position:relative;padding-left:26px;font-size:14.5px;color:var(--ink)}
+.perfil-adv li::before{content:'';position:absolute;left:0;top:4px;width:16px;height:16px;border-radius:50%;background:var(--c);opacity:.95}
+.perfil-adv li::after{content:'';position:absolute;left:5px;top:8px;width:6px;height:3.5px;border-left:2px solid #fff;border-bottom:2px solid #fff;transform:rotate(-45deg)}
+.perfil-res{margin:8px 24px 0;padding:12px 14px;border-radius:12px;background:color-mix(in srgb,var(--c) 9%,#fff);color:var(--c);font-family:'Montserrat',sans-serif;font-weight:700;font-size:14px;line-height:1.35}
+.perfil-pie{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 24px 22px}
+.perfil-valor{font-size:13px;font-weight:700;color:var(--body)}
+.perfil-valor-card{background:linear-gradient(135deg,var(--navy-deep),var(--navy) 60%,var(--navy-soft));color:#fff;border-radius:20px;padding:32px 28px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:14px;box-shadow:var(--shadow-lg)}
+.perfil-valor-card h3{color:#fff;font-size:24px}
+.perfil-valor-card p{color:rgba(255,255,255,.85);font-size:15px;max-width:300px}
+.perfil-valor-card .perfil-emoji{background:rgba(255,255,255,.14)}
+.todos{margin-top:44px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px 30px;box-shadow:var(--shadow)}
+.todos h3{font-size:18px;margin-bottom:16px;text-align:center}
+.todos ul{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:12px 24px}
+.todos li{display:flex;gap:10px;align-items:flex-start;font-size:14.5px;color:var(--ink)}
+.todos li>span:first-child{font-size:18px;line-height:1.3}
+.perfiles+.todos+.target{margin-top:36px}
+@media(max-width:1100px){.perfiles{grid-template-columns:repeat(2,1fr)}.todos ul{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:700px){.perfiles{grid-template-columns:1fr}.todos ul{grid-template-columns:1fr}}
+
+
+/* ---------- MI LOCAL (herramienta destacada) ---------- */
+.milocal{margin-top:44px;display:grid;grid-template-columns:1fr 1.15fr;gap:0;border-radius:24px;overflow:hidden;box-shadow:var(--shadow-lg);background:#fff;border:1px solid var(--line)}
+.milocal-main{background:linear-gradient(135deg,#be123c,#e11d48 55%,#fb7185);color:#fff;padding:38px 34px;display:flex;flex-direction:column;align-items:flex-start;gap:14px}
+.milocal-tag{display:inline-block;background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.4);border-radius:999px;padding:6px 14px;font-family:'Montserrat',sans-serif;font-weight:800;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase}
+.milocal-main h3{color:#fff;font-size:clamp(24px,2.6vw,32px);font-weight:800}
+.milocal-main p{color:rgba(255,255,255,.92);font-size:16px}
+.milocal-chips{display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-size:13px;font-weight:600}
+.milocal-chips b{background:#fff;color:#be123c;border-radius:999px;padding:5px 13px;font-family:'Montserrat',sans-serif;font-size:12.5px}
+.milocal-nota{font-size:12.5px;color:rgba(255,255,255,.85)}
+.milocal-nota:empty{display:none}
+.milocal-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line)}
+.milocal-grid>div{background:#fff;padding:24px 24px 22px}
+.milocal-grid span{display:grid;place-items:center;width:42px;height:42px;border-radius:12px;background:rgba(225,29,72,.1);font-size:20px;margin-bottom:10px}
+.milocal-grid h4{font-size:15.5px;margin-bottom:6px}
+.milocal-grid p{font-size:14px}
+.perfil-adv li.mi-local{padding:9px 10px 9px 36px;margin-left:-4px;border-radius:10px;background:rgba(225,29,72,.08);color:#be123c;font-weight:700}
+.perfil-adv li.mi-local::before{left:10px;top:11px;background:#e11d48}
+.perfil-adv li.mi-local::after{left:15px;top:15px}
+@media(max-width:980px){.milocal{grid-template-columns:1fr}.milocal-main{padding:30px 24px}}
+@media(max-width:560px){.milocal-grid{grid-template-columns:1fr}}
 
 /* ---------- SOLUCIONES (4 bloques con imagen) ---------- */
 .solutions{display:grid;gap:64px}
@@ -563,7 +620,7 @@ footer ul a:hover{color:#7BE39B}
     </a>
 
     <nav class="nav-links" id="navLinks">
-      <a href="#planes" data-pt="Planos">Planes</a>
+      <a href="#perfiles" data-pt="Perfis">Perfiles</a>
       <a href="#servicios" data-pt="Serviços">Servicios</a>
       <a href="#sabio">Sabio</a>
       <a href="#app" data-pt="O App">La App</a>
@@ -886,52 +943,152 @@ footer ul a:hover{color:#7BE39B}
   </div>
 </div>
 
-<!-- ===================== PLANES ===================== -->
-<section class="soft" id="planes" data-view="planes">
+<!-- ===================== PERFILES ===================== -->
+<section class="soft" id="perfiles" data-view="perfiles">
   <div class="wrap">
     <a class="back-home" href="#inicio" data-pt="&larr; Voltar ao início">&larr; Volver al inicio</a>
     <div class="sec-head reveal">
-      <span class="sec-tag" data-pt="Planos">Planes</span>
-      <h2 data-pt="Um plano para cada momento<br>do seu negócio ou da sua família">Un plan para cada momento<br>de tu negocio o tu familia</h2>
-      <p data-pt="Todos incluem acesso à plataforma. Sem fidelidade obrigatória.">Todos incluyen acceso a la plataforma. Sin permanencia obligatoria.</p>
+      <span class="sec-tag" data-pt="Perfis">Perfiles</span>
+      <h2 data-pt="Uma solução para<br>cada realidade">Una solución para<br>cada realidad</h2>
+      <p data-pt="Do controle da casa à empresa com produção: escolha o perfil que melhor descreve a sua realidade. Estão ordenados do mais leve ao mais completo.">Del control del hogar a la empresa con producción: elegí el perfil que mejor describe tu realidad. Están ordenados del más liviano al más completo.</p>
     </div>
 
-    <!-- ===================== FAMILIA ===================== -->
-    <div class="familia reveal" id="familia">
-      <div class="familia-grid">
-        <div>
-          <span class="familia-badge" data-pt="🏠 Novo · Peça sua demo agora!">🏠 Nuevo · ¡Pedí tu demo ahora!</span>
-          <h2 data-pt="Perfil Família — Ordem para viver melhor">Perfil Familia — Orden para vivir mejor</h2>
-          <p class="lead" data-pt="Você sabe realmente para onde vai o dinheiro da sua família? Com Visão Financeira – Perfil Família você pode registrar suas receitas e despesas, organizar suas contas e visualizar de forma clara como está a economia da casa.">
-            ¿Sabés realmente en qué se va el dinero de tu familia? Con Visão Financeira –
-            Perfil Familia podés registrar tus ingresos y gastos, organizar tus cuentas y
-            visualizar de forma clara cómo está la economía del hogar.
-          </p>
-
-          <div class="familia-feats">
-            <div><span style="font-size:19px;line-height:1">📊</span><span data-pt="Saiba quanto entra.">Sabé cuánto entra.</span></div>
-            <div><span style="font-size:19px;line-height:1">💰</span><span data-pt="Entenda quanto você gasta.">Entendé cuánto gastás.</span></div>
-            <div><span style="font-size:19px;line-height:1">🎯</span><span data-pt="Organize seus objetivos.">Organizá tus objetivos.</span></div>
-            <div><span style="font-size:19px;line-height:1">🧠</span><span data-pt="Tome decisões com informação, não com intuição.">Tomá decisiones con información, no con intuición.</span></div>
-          </div>
-
-          <div class="familia-price">
-            <b data-pt="Peça sua demo agora!">¡Pedí tu demo ahora!</b>
-          </div>
+    <div class="perfiles">
+      <article class="perfil fam reveal" id="familia">
+        <header class="perfil-head">
+          <span class="perfil-emoji" aria-hidden="true">🏠</span>
+          <h3 data-pt="Família">Familia</h3>
+          <p data-pt="Controle financeiro pessoal e da família">Control financiero personal y del hogar</p>
+        </header>
+        <div class="perfil-nivel"><span data-pt="Complexidade">Complejidad</span> <span class="dots" aria-hidden="true"><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></span> <b data-pt="Leve">Liviano</b></div>
+        <ul class="perfil-adv">
+          <li><span data-pt="Organize as receitas e despesas da casa">Ordená los ingresos y gastos de la casa</span></li>
+          <li><span data-pt="Acompanhe parcelas, cartões e financiamentos">Seguí cuotas, tarjetas y financiamientos</span></li>
+          <li><span data-pt="Defina metas e sonhos, e avance por níveis com medalhas e troféus">Definí metas y sueños, y avanzá por niveles con medallas y trofeos</span></li>
+          <li><span data-pt="Veja a economia da casa em um painel claro, com seu saldo e do que ele é composto">Mirá la economía del hogar en un panel claro, con tu saldo y de qué está hecho</span></li>
+        </ul>
+        <p class="perfil-res" data-pt="Mais tranquilidade hoje e um futuro melhor para todos.">Más tranquilidad hoy y un futuro mejor para todos.</p>
+        <div class="perfil-pie">
+          <span class="perfil-valor" data-pt="Valor a conversar">Valor a conversar</span>
+          <a href="https://vision-finaciera.vercel.app/crear-cuenta" target="_blank" rel="noopener" class="btn btn-ghost btn-sm" data-pt="Criar minha conta">Crear mi cuenta</a>
         </div>
-
-        <div class="familia-card">
-          <div class="familia-counter-label" style="font-size:16px;color:#fff;font-weight:700;margin-bottom:18px;line-height:1.4" data-pt="Sem cartão de crédito. Sem letras miúdas.">Sin tarjeta de crédito. Sin letra chica.</div>
-          <a href="https://vision-finaciera.vercel.app/crear-cuenta" target="_blank" rel="noopener" class="btn btn-primary" data-pt="Quero começar →">Quiero empezar →</a>
+      </article>
+      <article class="perfil ser reveal" id="perfil-servicios">
+        <header class="perfil-head">
+          <span class="perfil-emoji" aria-hidden="true">💼</span>
+          <h3 data-pt="Serviços">Servicios</h3>
+          <p data-pt="Prestadores de serviço, consultorias e profissionais liberais">Prestadores de servicios, consultorías y profesionales independientes</p>
+        </header>
+        <div class="perfil-nivel"><span data-pt="Complexidade">Complejidad</span> <span class="dots" aria-hidden="true"><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i></span> <b data-pt="Simples">Simple</b></div>
+        <ul class="perfil-adv">
+          <li><span data-pt="Registre receitas e despesas com o Sabio, sem termos contábeis nem estoque">Registrá ingresos y gastos con Sabio, sin términos contables ni stock</span></li>
+          <li><span data-pt="Controle recebimentos pendentes e vencimentos, e concilie quando forem quitados">Controlá cobros pendientes y vencimientos, y concilialos cuando se saldan</span></li>
+          <li><span data-pt="Mantenha seus clientes e fornecedores organizados">Mantené ordenados tus clientes y proveedores</span></li>
+          <li><span data-pt="Veja o resultado do mês em relatórios claros: receitas, despesas e caixa">Mirá el resultado del mes en informes claros: ingresos, gastos y caja</span></li>
+        </ul>
+        <p class="perfil-res" data-pt="Mais organização e tempo para fazer o que você ama.">Más orden y tiempo para dedicarte a lo que amás.</p>
+        <div class="perfil-pie">
+          <span class="perfil-valor" data-pt="Valor a conversar">Valor a conversar</span>
+          <a href="https://vision-finaciera.vercel.app/crear-cuenta" target="_blank" rel="noopener" class="btn btn-ghost btn-sm" data-pt="Criar minha conta">Crear mi cuenta</a>
         </div>
+      </article>
+      <article class="perfil com reveal" id="perfil-comercial">
+        <header class="perfil-head">
+          <span class="perfil-emoji" aria-hidden="true">🛍️</span>
+          <h3 data-pt="Comercial">Comercial</h3>
+          <p data-pt="Lojas, e-commerce e revendas">Tiendas, e-commerce y reventa</p>
+        </header>
+        <div class="perfil-nivel"><span data-pt="Complexidade">Complejidad</span> <span class="dots" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span> <b data-pt="Intermediário">Intermedio</b></div>
+        <ul class="perfil-adv">
+          <li><span data-pt="Controle compras, vendas e estoque com custo médio">Controlá compras, ventas y stock con costo promedio</span></li>
+          <li><span data-pt="Veja custo, preço e margem dos seus produtos">Mirá costo, precio y margen de tus productos</span></li>
+          <li><span data-pt="Organize contas a pagar e a receber, e compre parcelado ou no cartão">Ordená cuentas a pagar y a cobrar, y comprá en cuotas o con tarjeta</span></li>
+          <li class="mi-local"><span data-pt="Inclui o Meu Local: sua loja online">🛍️ Incluye Mi Local: tu tienda online</span></li>
+        </ul>
+        <p class="perfil-res" data-pt="Mais vendas e maior lucro, com controle real.">Más ventas y mayor ganancia, con control real.</p>
+        <div class="perfil-pie">
+          <span class="perfil-valor" data-pt="Valor a conversar">Valor a conversar</span>
+          <a href="https://vision-finaciera.vercel.app/crear-cuenta" target="_blank" rel="noopener" class="btn btn-ghost btn-sm" data-pt="Criar minha conta">Crear mi cuenta</a>
+        </div>
+      </article>
+      <article class="perfil pro reveal" id="perfil-produccion">
+        <header class="perfil-head">
+          <span class="perfil-emoji" aria-hidden="true">🏭</span>
+          <h3 data-pt="Produção">Producción</h3>
+          <p data-pt="Indústrias, fabricação e artesanato">Industrias, fabricación y artesanía</p>
+        </header>
+        <div class="perfil-nivel"><span data-pt="Complexidade">Complejidad</span> <span class="dots" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span> <b data-pt="Avançado">Avanzado</b></div>
+        <ul class="perfil-adv">
+          <li><span data-pt="Controle insumos e matérias-primas com seu estoque">Controlá insumos y materias primas con su stock</span></li>
+          <li><span data-pt="Monte receitas de produção e baixe os insumos consumidos">Armá recetas de producción y descontá los insumos que se consumen</span></li>
+          <li><span data-pt="Acompanhe o estoque do produto acabado e seu custo médio">Seguí el stock del producto terminado y su costo promedio</span></li>
+          <li><span data-pt="Inclui tudo do perfil Comercial para vender o que você produz">Incluye todo lo del perfil Comercial para vender lo que producís</span></li>
+          <li class="mi-local"><span data-pt="Inclui o Meu Local: sua loja online">🛍️ Incluye Mi Local: tu tienda online</span></li>
+        </ul>
+        <p class="perfil-res" data-pt="Mais controle do processo e maior produtividade.">Más control del proceso y mayor productividad.</p>
+        <div class="perfil-pie">
+          <span class="perfil-valor" data-pt="Valor a conversar">Valor a conversar</span>
+          <a href="https://vision-finaciera.vercel.app/crear-cuenta" target="_blank" rel="noopener" class="btn btn-ghost btn-sm" data-pt="Criar minha conta">Crear mi cuenta</a>
+        </div>
+      </article>
+      <article class="perfil mix reveal" id="perfil-mixto">
+        <header class="perfil-head">
+          <span class="perfil-emoji" aria-hidden="true">🧩</span>
+          <h3 data-pt="Misto">Mixto</h3>
+          <p data-pt="Combina vendas, serviços e produção">Combina ventas, servicios y producción</p>
+        </header>
+        <div class="perfil-nivel"><span data-pt="Complexidade">Complejidad</span> <span class="dots" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span> <b data-pt="Completo">Completo</b></div>
+        <ul class="perfil-adv">
+          <li><span data-pt="Monte seu perfil sob medida: você escolhe quais componentes seu negócio usa">Armá tu perfil a medida: elegís qué componentes usa tu negocio</span></li>
+          <li><span data-pt="Integre vendas, serviços e produção em um só lugar">Integrá ventas, servicios y producción en un solo lugar</span></li>
+          <li><span data-pt="Adapte o plano de contas, as categorias e as formas de pagamento à sua realidade">Adaptá el plan de cuentas, las categorías y las formas de pago a tu realidad</span></li>
+          <li><span data-pt="Visão completa do negócio em um painel único, com seu saldo e sua composição">Visión completa del negocio en un panel único, con tu saldo y su composición</span></li>
+          <li class="mi-local"><span data-pt="Inclui o Meu Local: sua loja online">🛍️ Incluye Mi Local: tu tienda online</span></li>
+        </ul>
+        <p class="perfil-res" data-pt="Visão completa do seu negócio e decisões mais seguras.">Visión completa de tu negocio y decisiones más seguras.</p>
+        <div class="perfil-pie">
+          <span class="perfil-valor" data-pt="Valor a conversar">Valor a conversar</span>
+          <a href="https://vision-finaciera.vercel.app/crear-cuenta" target="_blank" rel="noopener" class="btn btn-ghost btn-sm" data-pt="Criar minha conta">Crear mi cuenta</a>
+        </div>
+      </article>
+      <article class="perfil-valor-card reveal">
+        <span class="perfil-emoji" aria-hidden="true">🤝</span>
+        <h3 data-pt="Quanto custa?">¿Cuánto cuesta?</h3>
+        <p data-pt="O valor depende do perfil e da complexidade da sua operação. Crie sua conta e converse com a gente pelo botão de WhatsApp: definimos juntos, sem compromisso.">El valor depende del perfil y de la complejidad de tu operación. Creá tu cuenta y conversá con nosotros desde el botón de WhatsApp: lo definimos juntos, sin compromiso.</p>
+        <a href="https://vision-finaciera.vercel.app/crear-cuenta" target="_blank" rel="noopener" class="btn btn-primary" data-pt="Criar minha conta">Crear mi cuenta</a>
+      </article>
+    </div>
+
+    <div class="milocal reveal" id="mi-local">
+      <div class="milocal-main">
+        <span class="milocal-tag" data-pt="Ferramenta em destaque">Herramienta destacada</span>
+        <h3 data-pt="Meu Local: sua loja online, pronta para compartilhar">Mi Local: tu tienda online, lista para compartir</h3>
+        <p data-pt="Venda a partir de um link: publique seus produtos, compartilhe no WhatsApp ou no Instagram e receba os pedidos direto no seu painel. Tudo conectado com o seu estoque e a sua contabilidade.">Vendé desde un link: publicá tus productos, compartilo por WhatsApp o Instagram y recibí los pedidos directo en tu panel. Todo conectado con tu stock y tu contabilidad.</p>
+        <div class="milocal-chips">
+          <span data-pt="Incluído em:">Incluido en:</span>
+          <b data-pt="Comercial">Comercial</b><b data-pt="Produção">Producción</b><b data-pt="Misto">Mixto</b>
+        </div>
+        <a href="https://vision-finaciera.vercel.app/crear-cuenta" target="_blank" rel="noopener" class="btn btn-white" data-pt="Criar minha conta">Crear mi cuenta</a>
+        <small class="milocal-nota" data-pt="">Hoy la tienda que ven tus clientes se muestra en portugués (PT-BR).</small>
+      </div>
+      <div class="milocal-grid">
+        <div><span aria-hidden="true">🛒</span><h4 data-pt="Publique em minutos">Publicá en minutos</h4><p data-pt="Escolha produtos do seu catálogo e publique todos juntos, com o preço calculado sobre o seu custo médio mais a margem que você quiser.">Elegí productos de tu catálogo y publicalos juntos, con el precio calculado sobre tu costo promedio más el margen que quieras.</p></div>
+        <div><span aria-hidden="true">🔗</span><h4 data-pt="Um link para compartilhar">Un link para compartir</h4><p data-pt="Sua loja tem endereço próprio e, ao compartilhar no WhatsApp ou no Instagram, aparece com a sua capa e o nome do seu negócio.">Tu tienda tiene su propia dirección y, al compartirla en WhatsApp o Instagram, se ve con tu portada y el nombre de tu negocio.</p></div>
+        <div><span aria-hidden="true">📥</span><h4 data-pt="Pedidos no seu painel">Pedidos en tu panel</h4><p data-pt="Os pedidos chegam com o detalhe do que cada cliente pediu e você os leva de estado em estado até concluir. Clientes novos entram sozinhos na sua lista.">Los pedidos llegan con el detalle de lo que pidió cada cliente y los vas pasando de estado hasta cerrarlos. Los clientes nuevos se suman solos a tu lista.</p></div>
+        <div><span aria-hidden="true">✅</span><h4 data-pt="Venda registrada sem dupla digitação">Venta registrada sin cargar dos veces</h4><p data-pt="Ao confirmar um pedido, você o registra como venda: o estoque é baixado e tudo fica na sua contabilidade.">Al confirmar un pedido lo registrás como venta: se descuenta el stock y queda todo en tu contabilidad.</p></div>
       </div>
     </div>
 
-    <!-- ===================== PLANES DE NEGOCIO ===================== -->
-    <div class="sec-head reveal" style="margin-top:64px">
-      <span class="sec-tag" data-pt="Planos para negócios">Planes para negocios</span>
-      <h2 data-pt="Um plano para cada etapa<br>do seu negócio">Un plan para cada etapa<br>de tu negocio</h2>
-      <p data-pt="Para negócios Comerciais, de Serviços e Mistos. Todos incluem acesso à plataforma e acompanhamento humano. Sem fidelidade obrigatória.">Para negocios Comerciales, de Servicios y Mixtos. Todos incluyen acceso a la plataforma y acompañamiento humano. Sin permanencia obligatoria.</p>
+    <div class="todos reveal">
+      <h3 data-pt="Todos os perfis incluem">Todos los perfiles incluyen</h3>
+      <ul>
+        <li><span aria-hidden="true">📊</span><span data-pt="Painel de Controle com seu saldo em caixa e do que ele é composto">Panel de Control con tu saldo en caja y de qué está compuesto</span></li>
+        <li><span aria-hidden="true">🦉</span><span data-pt="Sabio: registre operações sem termos contábeis">Sabio: registrá operaciones sin términos contables</span></li>
+        <li><span aria-hidden="true">📈</span><span data-pt="Relatórios: Balanço, Resultado e Fluxo de Caixa">Informes: Balance, Resultados y Flujo de Caja</span></li>
+        <li><span aria-hidden="true">🏆</span><span data-pt="Objetivos, níveis e troféus que motivam">Objetivos, niveles y trofeos que motivan</span></li>
+        <li><span aria-hidden="true">📅</span><span data-pt="Vencimentos e lembretes no calendário">Vencimientos y recordatorios en el calendario</span></li>
+        <li><span aria-hidden="true">📱</span><span data-pt="No computador ou no celular, sem instalar nada">En computadora o celular, sin instalar nada</span></li>
+      </ul>
     </div>
 
     <!-- ===================== CLIENTE OBJETIVO ===================== -->
@@ -952,68 +1109,6 @@ footer ul a:hover{color:#7BE39B}
       <p class="target-closing" data-pt="Você não precisa ser uma grande empresa para gerir como uma.">No necesitás ser una gran empresa para gestionar como una.</p>
     </div>
 
-    <div class="promo reveal">
-      <span class="promo-badge" data-pt="🎉 Oferta de lançamento">🎉 Oferta de lanzamiento</span>
-      <div class="promo-text">
-        <strong data-pt="Peça sua demo agora!">¡Pedí tu demo ahora!</strong>
-        <span data-pt="Sem limite de vagas — comece quando quiser.">Sin límite de cupos — ¡Escribinos ahora!</span>
-      </div>
-    </div>
-
-    <div class="plans">
-
-      <div class="plan reveal">
-        <h3 data-pt="Essencial">Esencial</h3>
-        <p class="who" data-pt="Para quem está começando e precisa de organização desde o primeiro dia.">Para quien está empezando y necesita orden desde el primer día.</p>
-        <div class="price" data-pt="<sup>R$</sup>60"><sup>$</sup>15000</div>
-        <p class="per" data-pt="por mês">por mes</p>
-        <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="#1E8C3C" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span data-pt="Acesso à plataforma">Acceso a la plataforma</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="#1E8C3C" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span data-pt="Contabilidade mensal em dia">Contabilidad mensual al día</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="#1E8C3C" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span data-pt="Relatório mensal de resultados">Reporte mensual de resultados</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="#1E8C3C" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span data-pt="Suporte por WhatsApp">Soporte por WhatsApp</span></li>
-        </ul>
-        <a href="#contacto" class="btn btn-ghost" data-pt="Quero este plano">Quiero este plan</a>
-      </div>
-
-      <div class="plan featured reveal">
-        <span class="tag" data-pt="Mais escolhido">Más elegido</span>
-        <h3 data-pt="Crescimento">Crecimiento</h3>
-        <p class="who" data-pt="Para negócios em andamento que precisam decidir com dados reais.">Para negocios en marcha que necesitan decidir con datos reales.</p>
-        <div class="price" data-pt="<sup>R$</sup>100"><sup>$</sup>25000</div>
-        <p class="per" data-pt="por mês">por mes</p>
-        <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="#1E8C3C" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span data-pt="Tudo do plano Essencial">Todo lo del plan Esencial</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="#1E8C3C" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span data-pt="Controle de fluxo de caixa">Control de flujo de caja</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="#1E8C3C" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span data-pt="Análise de margens e indicadores">Análisis de márgenes e indicadores</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="#1E8C3C" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span data-pt="Reunião mensal de revisão">Reunión mensual de revisión</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="#1E8C3C" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span data-pt="Calendário de obrigações">Calendario de obligaciones</span></li>
-        </ul>
-        <a href="#contacto" class="btn btn-primary" data-pt="Quero este plano">Quiero este plan</a>
-      </div>
-
-      <div class="plan reveal">
-        <h3 data-pt="Estratégico">Estratégico</h3>
-        <p class="who" data-pt="Para empresas que querem planejar, projetar e escalar.">Para empresas que quieren planificar, proyectar y escalar.</p>
-        <div class="price" data-pt="<sup>R$</sup>120"><sup>$</sup>30000</div>
-        <p class="per" data-pt="por mês">por mes</p>
-        <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="#1E8C3C" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span data-pt="Tudo do plano Crescimento">Todo lo del plan Crecimiento</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="#1E8C3C" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span data-pt="Orçamento e projeções">Presupuesto y proyecciones</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="#1E8C3C" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span data-pt="Ponto de equilíbrio e cenários">Punto de equilibrio y escenarios</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="#1E8C3C" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span data-pt="Assessoria estratégica quinzenal">Asesoría estratégica quincenal</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="#1E8C3C" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span data-pt="Atendimento prioritário">Atención prioritaria</span></li>
-        </ul>
-        <a href="#contacto" class="btn btn-ghost" data-pt="Quero este plano">Quiero este plan</a>
-      </div>
-
-    </div>
-
-    <p class="plans-note reveal" data-pt="Não sabe qual é o ideal? <a href='#contacto' style='color:#1E8C3C;font-weight:600'>Vamos conversar</a> e recomendamos o mais adequado, sem compromisso.">
-      ¿No sabes cuál te conviene?
-      <a href="#contacto" style="color:#1E8C3C;font-weight:600">Conversemos</a>
-      y te recomendamos el adecuado, sin compromiso.
-    </p>
     <p class="disclaimer reveal" data-pt="A Visão Financeira não substitui um contador e não garante lucros nem resultados positivos.">Visão Financeira no reemplaza a un contador y no garantiza ganancias ni resultados positivos.</p>
   </div>
 </section>
@@ -1275,7 +1370,7 @@ footer ul a:hover{color:#7BE39B}
       <div>
         <h4>Empresa</h4>
         <ul>
-          <li><a href="#planes" data-pt="Planos">Planes</a></li>
+          <li><a href="#perfiles" data-pt="Perfis">Perfiles</a></li>
           <li><a href="#sabio" data-pt="Conheça o Sabio">Conoce a Sabio</a></li>
           <li><a href="#como" data-pt="Como trabalhamos">Cómo trabajamos</a></li>
           <li><a href="#faq" data-pt="Perguntas frequentes">Preguntas frecuentes</a></li>
@@ -1389,7 +1484,7 @@ document.querySelectorAll('.ttab').forEach(function(tab){
 
 
 /* ---------- VISTAS: Inicio / Planes / Servicios ---------- */
-var VISTA_DE = { planes:'planes', familia:'planes', servicios:'servicios', faq:'faq', sabio:'sabio', como:'sabio', transparencia:'transparencia' };
+var VISTA_DE = { perfiles:'perfiles', planes:'perfiles', familia:'perfiles', 'perfil-servicios':'perfiles', 'perfil-comercial':'perfiles', 'perfil-produccion':'perfiles', 'perfil-mixto':'perfiles', servicios:'servicios', faq:'faq', sabio:'sabio', como:'sabio', transparencia:'transparencia' };
 function vistaDeHash(id){ return id === 'contacto' ? document.body.dataset.vista : (VISTA_DE[id] || 'home'); }
 function irA(id, instantaneo){
   var vista = vistaDeHash(id);
@@ -1397,7 +1492,7 @@ function irA(id, instantaneo){
   document.body.dataset.vista = vista;
   document.querySelectorAll('.nav-links a').forEach(function(a){
     var h = (a.getAttribute('href') || '').slice(1);
-    a.classList.toggle('active', vista !== 'home' && vistaDeHash(h) === vista && (h === 'planes' || h === 'servicios' || h === 'faq' || h === 'sabio' || h === 'transparencia'));
+    a.classList.toggle('active', vista !== 'home' && vistaDeHash(h) === vista && (h === 'perfiles' || h === 'servicios' || h === 'faq' || h === 'sabio' || h === 'transparencia'));
   });
   var el = id ? document.getElementById(id) : null;
   if(!el || id === 'inicio'){ window.scrollTo({ top:0, behavior: (cambio || instantaneo) ? 'instant' : 'smooth' }); return; }

@@ -259,6 +259,28 @@ body[data-vista="transparencia"] [data-view]:not([data-view="transparencia"]):no
 @media(max-width:1100px){.perfiles{grid-template-columns:repeat(2,1fr)}.todos ul{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:700px){.perfiles{grid-template-columns:1fr}.todos ul{grid-template-columns:1fr}}
 
+
+/* ---------- MI LOCAL (herramienta destacada) ---------- */
+.milocal{margin-top:44px;display:grid;grid-template-columns:1fr 1.15fr;gap:0;border-radius:24px;overflow:hidden;box-shadow:var(--shadow-lg);background:#fff;border:1px solid var(--line)}
+.milocal-main{background:linear-gradient(135deg,#be123c,#e11d48 55%,#fb7185);color:#fff;padding:38px 34px;display:flex;flex-direction:column;align-items:flex-start;gap:14px}
+.milocal-tag{display:inline-block;background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.4);border-radius:999px;padding:6px 14px;font-family:'Montserrat',sans-serif;font-weight:800;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase}
+.milocal-main h3{color:#fff;font-size:clamp(24px,2.6vw,32px);font-weight:800}
+.milocal-main p{color:rgba(255,255,255,.92);font-size:16px}
+.milocal-chips{display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-size:13px;font-weight:600}
+.milocal-chips b{background:#fff;color:#be123c;border-radius:999px;padding:5px 13px;font-family:'Montserrat',sans-serif;font-size:12.5px}
+.milocal-nota{font-size:12.5px;color:rgba(255,255,255,.85)}
+.milocal-nota:empty{display:none}
+.milocal-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line)}
+.milocal-grid>div{background:#fff;padding:24px 24px 22px}
+.milocal-grid span{display:grid;place-items:center;width:42px;height:42px;border-radius:12px;background:rgba(225,29,72,.1);font-size:20px;margin-bottom:10px}
+.milocal-grid h4{font-size:15.5px;margin-bottom:6px}
+.milocal-grid p{font-size:14px}
+.perfil-adv li.mi-local{padding:9px 10px 9px 36px;margin-left:-4px;border-radius:10px;background:rgba(225,29,72,.08);color:#be123c;font-weight:700}
+.perfil-adv li.mi-local::before{left:10px;top:11px;background:#e11d48}
+.perfil-adv li.mi-local::after{left:15px;top:15px}
+@media(max-width:980px){.milocal{grid-template-columns:1fr}.milocal-main{padding:30px 24px}}
+@media(max-width:560px){.milocal-grid{grid-template-columns:1fr}}
+
 /* ---------- SOLUCIONES (4 bloques con imagen) ---------- */
 .solutions{display:grid;gap:64px}
 .solution{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
@@ -948,7 +970,7 @@ footer ul a:hover{color:#7BE39B}
         <p class="perfil-res" data-pt="Mais tranquilidade hoje e um futuro melhor para todos.">Más tranquilidad hoy y un futuro mejor para todos.</p>
         <div class="perfil-pie">
           <span class="perfil-valor" data-pt="Valor a conversar">Valor a conversar</span>
-          <a href="https://wa.me/5548996094127?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20del%20perfil%20Familia" data-pt-href="https://wa.me/5548996094127?text=Ol%C3%A1%2C%20quero%20saber%20mais%20do%20perfil%20Fam%C3%ADlia" target="_blank" rel="noopener" class="btn btn-ghost btn-sm" data-pt="Quero conversar">Quiero conversar</a>
+          <a href="https://vision-finaciera.vercel.app/crear-cuenta" target="_blank" rel="noopener" class="btn btn-ghost btn-sm" data-pt="Criar minha conta">Crear mi cuenta</a>
         </div>
       </article>
       <article class="perfil ser reveal" id="perfil-servicios">
@@ -967,7 +989,7 @@ footer ul a:hover{color:#7BE39B}
         <p class="perfil-res" data-pt="Mais organização e tempo para fazer o que você ama.">Más orden y tiempo para dedicarte a lo que amás.</p>
         <div class="perfil-pie">
           <span class="perfil-valor" data-pt="Valor a conversar">Valor a conversar</span>
-          <a href="https://wa.me/5548996094127?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20del%20perfil%20Servicios" data-pt-href="https://wa.me/5548996094127?text=Ol%C3%A1%2C%20quero%20saber%20mais%20do%20perfil%20Servi%C3%A7os" target="_blank" rel="noopener" class="btn btn-ghost btn-sm" data-pt="Quero conversar">Quiero conversar</a>
+          <a href="https://vision-finaciera.vercel.app/crear-cuenta" target="_blank" rel="noopener" class="btn btn-ghost btn-sm" data-pt="Criar minha conta">Crear mi cuenta</a>
         </div>
       </article>
       <article class="perfil com reveal" id="perfil-comercial">
@@ -981,12 +1003,12 @@ footer ul a:hover{color:#7BE39B}
           <li><span data-pt="Controle compras, vendas e estoque com custo médio">Controlá compras, ventas y stock con costo promedio</span></li>
           <li><span data-pt="Veja custo, preço e margem dos seus produtos">Mirá costo, precio y margen de tus productos</span></li>
           <li><span data-pt="Organize contas a pagar e a receber, e compre parcelado ou no cartão">Ordená cuentas a pagar y a cobrar, y comprá en cuotas o con tarjeta</span></li>
-          <li><span data-pt="Meu Local: uma loja online com link para compartilhar, onde chegam os pedidos">Mi Local: una tienda online con link para compartir, donde te llegan los pedidos (hoy se muestra en portugués)</span></li>
+          <li class="mi-local"><span data-pt="Inclui o Meu Local: sua loja online">🛍️ Incluye Mi Local: tu tienda online</span></li>
         </ul>
         <p class="perfil-res" data-pt="Mais vendas e maior lucro, com controle real.">Más ventas y mayor ganancia, con control real.</p>
         <div class="perfil-pie">
           <span class="perfil-valor" data-pt="Valor a conversar">Valor a conversar</span>
-          <a href="https://wa.me/5548996094127?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20del%20perfil%20Comercial" data-pt-href="https://wa.me/5548996094127?text=Ol%C3%A1%2C%20quero%20saber%20mais%20do%20perfil%20Comercial" target="_blank" rel="noopener" class="btn btn-ghost btn-sm" data-pt="Quero conversar">Quiero conversar</a>
+          <a href="https://vision-finaciera.vercel.app/crear-cuenta" target="_blank" rel="noopener" class="btn btn-ghost btn-sm" data-pt="Criar minha conta">Crear mi cuenta</a>
         </div>
       </article>
       <article class="perfil pro reveal" id="perfil-produccion">
@@ -1001,11 +1023,12 @@ footer ul a:hover{color:#7BE39B}
           <li><span data-pt="Monte receitas de produção e baixe os insumos consumidos">Armá recetas de producción y descontá los insumos que se consumen</span></li>
           <li><span data-pt="Acompanhe o estoque do produto acabado e seu custo médio">Seguí el stock del producto terminado y su costo promedio</span></li>
           <li><span data-pt="Inclui tudo do perfil Comercial para vender o que você produz">Incluye todo lo del perfil Comercial para vender lo que producís</span></li>
+          <li class="mi-local"><span data-pt="Inclui o Meu Local: sua loja online">🛍️ Incluye Mi Local: tu tienda online</span></li>
         </ul>
         <p class="perfil-res" data-pt="Mais controle do processo e maior produtividade.">Más control del proceso y mayor productividad.</p>
         <div class="perfil-pie">
           <span class="perfil-valor" data-pt="Valor a conversar">Valor a conversar</span>
-          <a href="https://wa.me/5548996094127?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20del%20perfil%20Producci%C3%B3n" data-pt-href="https://wa.me/5548996094127?text=Ol%C3%A1%2C%20quero%20saber%20mais%20do%20perfil%20Produ%C3%A7%C3%A3o" target="_blank" rel="noopener" class="btn btn-ghost btn-sm" data-pt="Quero conversar">Quiero conversar</a>
+          <a href="https://vision-finaciera.vercel.app/crear-cuenta" target="_blank" rel="noopener" class="btn btn-ghost btn-sm" data-pt="Criar minha conta">Crear mi cuenta</a>
         </div>
       </article>
       <article class="perfil mix reveal" id="perfil-mixto">
@@ -1020,19 +1043,40 @@ footer ul a:hover{color:#7BE39B}
           <li><span data-pt="Integre vendas, serviços e produção em um só lugar">Integrá ventas, servicios y producción en un solo lugar</span></li>
           <li><span data-pt="Adapte o plano de contas, as categorias e as formas de pagamento à sua realidade">Adaptá el plan de cuentas, las categorías y las formas de pago a tu realidad</span></li>
           <li><span data-pt="Visão completa do negócio em um painel único, com seu saldo e sua composição">Visión completa del negocio en un panel único, con tu saldo y su composición</span></li>
+          <li class="mi-local"><span data-pt="Inclui o Meu Local: sua loja online">🛍️ Incluye Mi Local: tu tienda online</span></li>
         </ul>
         <p class="perfil-res" data-pt="Visão completa do seu negócio e decisões mais seguras.">Visión completa de tu negocio y decisiones más seguras.</p>
         <div class="perfil-pie">
           <span class="perfil-valor" data-pt="Valor a conversar">Valor a conversar</span>
-          <a href="https://wa.me/5548996094127?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20del%20perfil%20Mixto" data-pt-href="https://wa.me/5548996094127?text=Ol%C3%A1%2C%20quero%20saber%20mais%20do%20perfil%20Misto" target="_blank" rel="noopener" class="btn btn-ghost btn-sm" data-pt="Quero conversar">Quiero conversar</a>
+          <a href="https://vision-finaciera.vercel.app/crear-cuenta" target="_blank" rel="noopener" class="btn btn-ghost btn-sm" data-pt="Criar minha conta">Crear mi cuenta</a>
         </div>
       </article>
       <article class="perfil-valor-card reveal">
         <span class="perfil-emoji" aria-hidden="true">🤝</span>
         <h3 data-pt="Quanto custa?">¿Cuánto cuesta?</h3>
-        <p data-pt="O valor depende do perfil e da complexidade da sua operação. Definimos juntos em uma conversa, sem compromisso.">El valor depende del perfil y de la complejidad de tu operación. Lo definimos juntos en una conversación, sin compromiso.</p>
-        <a href="https://wa.me/5548996094127?text=Hola%2C%20quiero%20conversar%20sobre%20qu%C3%A9%20perfil%20me%20conviene" data-pt-href="https://wa.me/5548996094127?text=Ol%C3%A1%2C%20quero%20conversar%20sobre%20qual%20perfil%20combina%20comigo" target="_blank" rel="noopener" class="btn btn-primary" data-pt="Falar sobre o meu perfil">Hablar sobre mi perfil</a>
+        <p data-pt="O valor depende do perfil e da complexidade da sua operação. Crie sua conta e converse com a gente pelo botão de WhatsApp: definimos juntos, sem compromisso.">El valor depende del perfil y de la complejidad de tu operación. Creá tu cuenta y conversá con nosotros desde el botón de WhatsApp: lo definimos juntos, sin compromiso.</p>
+        <a href="https://vision-finaciera.vercel.app/crear-cuenta" target="_blank" rel="noopener" class="btn btn-primary" data-pt="Criar minha conta">Crear mi cuenta</a>
       </article>
+    </div>
+
+    <div class="milocal reveal" id="mi-local">
+      <div class="milocal-main">
+        <span class="milocal-tag" data-pt="Ferramenta em destaque">Herramienta destacada</span>
+        <h3 data-pt="Meu Local: sua loja online, pronta para compartilhar">Mi Local: tu tienda online, lista para compartir</h3>
+        <p data-pt="Venda a partir de um link: publique seus produtos, compartilhe no WhatsApp ou no Instagram e receba os pedidos direto no seu painel. Tudo conectado com o seu estoque e a sua contabilidade.">Vendé desde un link: publicá tus productos, compartilo por WhatsApp o Instagram y recibí los pedidos directo en tu panel. Todo conectado con tu stock y tu contabilidad.</p>
+        <div class="milocal-chips">
+          <span data-pt="Incluído em:">Incluido en:</span>
+          <b data-pt="Comercial">Comercial</b><b data-pt="Produção">Producción</b><b data-pt="Misto">Mixto</b>
+        </div>
+        <a href="https://vision-finaciera.vercel.app/crear-cuenta" target="_blank" rel="noopener" class="btn btn-white" data-pt="Criar minha conta">Crear mi cuenta</a>
+        <small class="milocal-nota" data-pt="">Hoy la tienda que ven tus clientes se muestra en portugués (PT-BR).</small>
+      </div>
+      <div class="milocal-grid">
+        <div><span aria-hidden="true">🛒</span><h4 data-pt="Publique em minutos">Publicá en minutos</h4><p data-pt="Escolha produtos do seu catálogo e publique todos juntos, com o preço calculado sobre o seu custo médio mais a margem que você quiser.">Elegí productos de tu catálogo y publicalos juntos, con el precio calculado sobre tu costo promedio más el margen que quieras.</p></div>
+        <div><span aria-hidden="true">🔗</span><h4 data-pt="Um link para compartilhar">Un link para compartir</h4><p data-pt="Sua loja tem endereço próprio e, ao compartilhar no WhatsApp ou no Instagram, aparece com a sua capa e o nome do seu negócio.">Tu tienda tiene su propia dirección y, al compartirla en WhatsApp o Instagram, se ve con tu portada y el nombre de tu negocio.</p></div>
+        <div><span aria-hidden="true">📥</span><h4 data-pt="Pedidos no seu painel">Pedidos en tu panel</h4><p data-pt="Os pedidos chegam com o detalhe do que cada cliente pediu e você os leva de estado em estado até concluir. Clientes novos entram sozinhos na sua lista.">Los pedidos llegan con el detalle de lo que pidió cada cliente y los vas pasando de estado hasta cerrarlos. Los clientes nuevos se suman solos a tu lista.</p></div>
+        <div><span aria-hidden="true">✅</span><h4 data-pt="Venda registrada sem dupla digitação">Venta registrada sin cargar dos veces</h4><p data-pt="Ao confirmar um pedido, você o registra como venda: o estoque é baixado e tudo fica na sua contabilidade.">Al confirmar un pedido lo registrás como venta: se descuenta el stock y queda todo en tu contabilidad.</p></div>
+      </div>
     </div>
 
     <div class="todos reveal">

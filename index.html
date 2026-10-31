@@ -260,6 +260,21 @@ body[data-vista="transparencia"] [data-view]:not([data-view="transparencia"]):no
 @media(max-width:700px){.perfiles{grid-template-columns:1fr}.todos ul{grid-template-columns:1fr}}
 
 
+
+/* ---------- PERSONAJES DE LOS PERFILES ---------- */
+.avatares{display:flex;flex-wrap:wrap;justify-content:center;gap:18px 26px;margin-top:26px}
+.avatar{--c:#14265E;display:flex;flex-direction:column;align-items:center;gap:8px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:12.5px;color:var(--ink);transition:transform .2s}
+.avatar.fam{--c:#db2777}.avatar.ser{--c:#2563eb}.avatar.com{--c:#16a34a}.avatar.pro{--c:#ea580c}.avatar.mix{--c:#7c3aed}
+.avatar img{width:72px;height:72px;border-radius:50%;object-fit:cover;border:3px solid var(--c);box-shadow:0 6px 16px rgba(20,38,94,.18);background:#fff;transition:.2s}
+.avatar:hover{transform:translateY(-4px)}
+.avatar:hover img{box-shadow:0 10px 22px rgba(20,38,94,.28)}
+.avatar span{padding:3px 12px;border-radius:999px;background:var(--c);color:#fff;font-size:11.5px;letter-spacing:.03em}
+.perfil-foto{background:color-mix(in srgb,var(--c) 10%,#fff);line-height:0;height:230px;overflow:hidden}
+.perfil-foto img{width:100%;height:100%;object-fit:cover;object-position:50% 22%;display:block;transition:transform .5s ease}
+.perfil:hover .perfil-foto img{transform:scale(1.04)}
+.perfil-head{padding-bottom:16px}
+@media(max-width:700px){.perfil-foto{height:210px}.avatar img{width:60px;height:60px}}
+
 /* ---------- MI LOCAL (herramienta destacada) ---------- */
 .milocal{margin-top:44px;display:grid;grid-template-columns:1fr 1.15fr;gap:0;border-radius:24px;overflow:hidden;box-shadow:var(--shadow-lg);background:#fff;border:1px solid var(--line)}
 .milocal-main{background:linear-gradient(135deg,#be123c,#e11d48 55%,#fb7185);color:#fff;padding:38px 34px;display:flex;flex-direction:column;align-items:flex-start;gap:14px}
@@ -951,6 +966,13 @@ footer ul a:hover{color:#7BE39B}
       <span class="sec-tag" data-pt="Perfis">Perfiles</span>
       <h2 data-pt="Uma solução para<br>cada realidade">Una solución para<br>cada realidad</h2>
       <p data-pt="Do controle da casa à empresa com produção: escolha o perfil que melhor descreve a sua realidade. Estão ordenados do mais leve ao mais completo.">Del control del hogar a la empresa con producción: elegí el perfil que mejor describe tu realidad. Están ordenados del más liviano al más completo.</p>
+      <div class="avatares">
+      <a href="#familia" class="avatar fam" title="Familia" aria-label="Familia"><img src="assets/perfil-familia.webp" alt="" style="object-position:50% 20%" loading="lazy" width="64" height="64"><span data-pt="Família">Familia</span></a>
+      <a href="#perfil-servicios" class="avatar ser" title="Servicios" aria-label="Servicios"><img src="assets/perfil-servicios.webp" alt="" style="object-position:45% 20%" loading="lazy" width="64" height="64"><span data-pt="Serviços">Servicios</span></a>
+      <a href="#perfil-comercial" class="avatar com" title="Comercial" aria-label="Comercial"><img src="assets/perfil-comercial.webp" alt="" style="object-position:58% 20%" loading="lazy" width="64" height="64"><span data-pt="Comercial">Comercial</span></a>
+      <a href="#perfil-produccion" class="avatar pro" title="Producción" aria-label="Producción"><img src="assets/perfil-produccion.webp" alt="" style="object-position:50% 20%" loading="lazy" width="64" height="64"><span data-pt="Produção">Producción</span></a>
+      <a href="#perfil-mixto" class="avatar mix" title="Mixto" aria-label="Mixto"><img src="assets/perfil-mixto.webp" alt="" style="object-position:55% 20%" loading="lazy" width="64" height="64"><span data-pt="Misto">Mixto</span></a>
+      </div>
     </div>
 
     <div class="perfiles">
@@ -960,6 +982,7 @@ footer ul a:hover{color:#7BE39B}
           <h3 data-pt="Família">Familia</h3>
           <p data-pt="Controle financeiro pessoal e da família">Control financiero personal y del hogar</p>
         </header>
+        <div class="perfil-foto"><img src="assets/perfil-familia.webp" alt="Una familia de cuatro integrantes sonriendo juntos" data-pt-alt="Uma família sorrindo junta" loading="lazy" width="452" height="422"></div>
         <div class="perfil-nivel"><span data-pt="Complexidade">Complejidad</span> <span class="dots" aria-hidden="true"><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></span> <b data-pt="Leve">Liviano</b></div>
         <ul class="perfil-adv">
           <li><span data-pt="Organize as receitas e despesas da casa">Ordená los ingresos y gastos de la casa</span></li>
@@ -979,6 +1002,7 @@ footer ul a:hover{color:#7BE39B}
           <h3 data-pt="Serviços">Servicios</h3>
           <p data-pt="Prestadores de serviço, consultorias e profissionais liberais">Prestadores de servicios, consultorías y profesionales independientes</p>
         </header>
+        <div class="perfil-foto"><img src="assets/perfil-servicios.webp" alt="Un profesional de servicios trabajando con su computadora" data-pt-alt="Um profissional de serviços trabalhando no computador" loading="lazy" width="452" height="422"></div>
         <div class="perfil-nivel"><span data-pt="Complexidade">Complejidad</span> <span class="dots" aria-hidden="true"><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i></span> <b data-pt="Simples">Simple</b></div>
         <ul class="perfil-adv">
           <li><span data-pt="Registre receitas e despesas com o Sabio, sem termos contábeis nem estoque">Registrá ingresos y gastos con Sabio, sin términos contables ni stock</span></li>
@@ -998,6 +1022,7 @@ footer ul a:hover{color:#7BE39B}
           <h3 data-pt="Comercial">Comercial</h3>
           <p data-pt="Lojas, e-commerce e revendas">Tiendas, e-commerce y reventa</p>
         </header>
+        <div class="perfil-foto"><img src="assets/perfil-comercial.webp" alt="Una comerciante con una bolsa de compras en su tienda" data-pt-alt="Uma comerciante com uma sacola de compras na sua loja" loading="lazy" width="452" height="422"></div>
         <div class="perfil-nivel"><span data-pt="Complexidade">Complejidad</span> <span class="dots" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span> <b data-pt="Intermediário">Intermedio</b></div>
         <ul class="perfil-adv">
           <li><span data-pt="Controle compras, vendas e estoque com custo médio">Controlá compras, ventas y stock con costo promedio</span></li>
@@ -1017,6 +1042,7 @@ footer ul a:hover{color:#7BE39B}
           <h3 data-pt="Produção">Producción</h3>
           <p data-pt="Indústrias, fabricação e artesanato">Industrias, fabricación y artesanía</p>
         </header>
+        <div class="perfil-foto"><img src="assets/perfil-produccion.webp" alt="Un productor con delantal en su taller con cajas y materiales" data-pt-alt="Um produtor de avental na sua oficina com caixas e materiais" loading="lazy" width="452" height="422"></div>
         <div class="perfil-nivel"><span data-pt="Complexidade">Complejidad</span> <span class="dots" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span> <b data-pt="Avançado">Avanzado</b></div>
         <ul class="perfil-adv">
           <li><span data-pt="Controle insumos e matérias-primas com seu estoque">Controlá insumos y materias primas con su stock</span></li>
@@ -1037,6 +1063,7 @@ footer ul a:hover{color:#7BE39B}
           <h3 data-pt="Misto">Mixto</h3>
           <p data-pt="Combina vendas, serviços e produção">Combina ventas, servicios y producción</p>
         </header>
+        <div class="perfil-foto"><img src="assets/perfil-mixto.webp" alt="Una emprendedora que combina ventas, servicios y producción" data-pt-alt="Uma empreendedora que combina vendas, serviços e produção" loading="lazy" width="452" height="422"></div>
         <div class="perfil-nivel"><span data-pt="Complexidade">Complejidad</span> <span class="dots" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span> <b data-pt="Completo">Completo</b></div>
         <ul class="perfil-adv">
           <li><span data-pt="Monte seu perfil sob medida: você escolhe quais componentes seu negócio usa">Armá tu perfil a medida: elegís qué componentes usa tu negocio</span></li>
@@ -1443,6 +1470,11 @@ function applyLang(lang){
   document.querySelectorAll('[data-pt]').forEach(function(el){
     if(el.dataset.es === undefined){ el.dataset.es = el.innerHTML; }
     el.innerHTML = (lang === 'pt') ? el.dataset.pt : el.dataset.es;
+  });
+
+  document.querySelectorAll('[data-pt-alt]').forEach(function(el){
+    if(el.dataset.esAlt === undefined){ el.dataset.esAlt = el.getAttribute('alt'); }
+    el.setAttribute('alt', (lang === 'pt') ? el.dataset.ptAlt : el.dataset.esAlt);
   });
 
   document.querySelectorAll('[data-pt-href]').forEach(function(el){
